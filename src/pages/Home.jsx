@@ -31,8 +31,8 @@ export const Home = () => {
           <ContactSection />
         </main>
 
-        {/* Footer */}
-        <Footer />
+        {/* Footer 
+        <Footer />*/}
       </div>
     </LanguageProvider>
   );

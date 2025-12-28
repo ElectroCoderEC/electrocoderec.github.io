@@ -1,10 +1,14 @@
-import { Moon, Sun } from "lucide-react";
+import { Moon, Sun,  Printer } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { LanguageSelector } from "./LanguageSelector";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
+
 
   useEffect(() => {
     // Detectar tema preferido del sistema
@@ -26,8 +30,34 @@ export const ThemeToggle = () => {
     }
   };
 
+  const downloadSubmit = (e) => {
+   
+
+
+    const targetFile = t('dowloadPDF');
+    window.open(targetFile, "_blank", "noopener,noreferrer");
+  
+
+
+  };
+
+
   return (
-    <div className="fixed top-4 right-5 z-50 flex items-center gap-2 max-md:top-3 max-md:right-3">
+    <div className="fixed top-1 right-5 z-50 flex items-center gap-2 max-md:top-3 max-md:right-3"
+    >
+
+      {/* Language Selector - ocultar en mobile */}
+      <button
+        onClick={downloadSubmit}
+        className={cn(
+                  "cosmic-button w-full flex items-center justify-center gap-2 max-md:hidden"
+                )}
+      >
+       {t('cv')}
+
+        <Printer size={20} />
+      </button>
+
       {/* Language Selector - ocultar en mobile */}
       <div className="max-md:hidden">
         <LanguageSelector />
@@ -38,7 +68,7 @@ export const ThemeToggle = () => {
         onClick={toggleTheme}
         className={cn(
           "max-md:hidden p-2 rounded-full transition-colors duration-300",
-          "hover:bg-primary/10 focus:outline-none"
+          "hover:bg-primary/10 focus:outline-none border-3"
         )}
         aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       >

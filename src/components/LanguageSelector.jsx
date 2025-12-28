@@ -13,7 +13,7 @@ export const LanguageSelector = () => {
         onClick={() => setIsOpen(!isOpen)}
         className={cn(
           "p-2 rounded-full transition-colors duration-300 flex items-center gap-2",
-          "hover:bg-primary/10 focus:outline-none"
+          "hover:bg-primary/10 focus:outline-none border-3"
         )}
         aria-label="Select language"
       >

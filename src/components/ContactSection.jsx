@@ -7,45 +7,96 @@ import {
   Send,
   Twitch,
   Twitter,
+  Facebook,
+  
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { useTranslation } from "../hooks/useTranslation";
 
 export const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useTranslation();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+ // Esta lógica toma la traducción y separa la última palabra
+  const getFormattedTitle = () => {
+    const fullText = t('contact.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
+    const words = fullText.split(" "); // Lo dividimos por espacios
+    
+    if (words.length <= 1) return fullText; // Si solo hay una palabra, no hace nada
 
-    setIsSubmitting(true);
+    const lastWord = words.pop(); // Extrae la última palabra: "Contacto"
+    const restOfText = words.join(" "); // Une el resto: "Ponte en"
 
-    setTimeout(() => {
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+    return (
+      <>
+        {restOfText} <span className="text-primary">{lastWord}</span>
+      </>
+    );
   };
+
+  
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  // Capturamos los datos del formulario
+  const formData = new FormData(e.target);
+  
+  // Tu Access Key de Web3Forms (Consíguela gratis en https://web3forms.com/)
+  // Solo necesitas poner tu email y te la envían al instante
+  formData.append("access_key", "228363bb-ec32-4b67-a0ad-2d04e155562e"); 
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      toast({
+        title: t('contact.ToastTitle'),
+        description: t('contact.ToastDescription'),
+      });
+      e.target.reset(); // Esto limpia todos los campos del formulario
+    } else {
+      // Opcional: Toast de error si algo sale mal
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+      });
+    }
+  } catch (error) {
+    console.error("Error enviando el formulario:", error);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
+
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-          Get In <span className="text-primary"> Touch</span>
+         
+         {getFormattedTitle()}
+
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          Have a project in mind or want to collaborate? Feel free to reach out.
-          I'm always open to discussing new opportunities.
+          {t('contact.description')}
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">
               {" "}
-              Contact Information
+               {t('contact.contactInformationTitle')}
             </h3>
 
             <div className="space-y-6 justify-center">
@@ -53,8 +104,8 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Email</h4>
+                <div className="text-left">
+                  <h4 className="font-medium"><b>  {t('contact.email')} </b></h4>
                   <a
                     href="mailto:hello@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -67,8 +118,8 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Phone</h4>
+                <div className="text-left">
+                  <h4 className="font-medium"><b>  {t('contact.phone')} </b></h4>
                   <a
                     href="tel:+11234567890"
                     className="text-muted-foreground hover:text-primary transition-colors"
@@ -81,8 +132,8 @@ export const ContactSection = () => {
                 <div className="p-3 rounded-full bg-primary/10">
                   <MapPin className="h-6 w-6 text-primary" />{" "}
                 </div>
-                <div>
-                  <h4 className="font-medium"> Location</h4>
+                <div className="text-left">
+                  <h3 className="font-medium"><b>  {t('contact.location')}</b></h3>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
                     Braunschweig, Deutschland
                   </a>
@@ -91,20 +142,19 @@ export const ContactSection = () => {
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4"> Connect With Me</h4>
+              <h4 className="font-medium mb-4"> {t('contact.connectwithme')}</h4>
               <div className="flex space-x-4 justify-center">
                 <a href="#" target="_blank">
                   <Linkedin />
                 </a>
                 <a href="#" target="_blank">
-                  <Twitter />
+                  <Facebook />
                 </a>
                 <a href="#" target="_blank">
                   <Instagram />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitch />
-                </a>
+                 
+              
               </div>
             </div>
           </div>
@@ -113,7 +163,7 @@ export const ContactSection = () => {
             className="bg-card p-8 rounded-lg shadow-xs"
             onSubmit={handleSubmit}
           >
-            <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
+            <h3 className="text-2xl font-semibold mb-6">  {t('contact.sendMessage')}</h3>
 
             <form className="space-y-6">
               <div>
@@ -122,7 +172,7 @@ export const ContactSection = () => {
                   className="block text-sm font-medium mb-2"
                 >
                   {" "}
-                  Your Name
+                  {t('contact.nameTitle')}
                 </label>
                 <input
                   type="text"
@@ -130,7 +180,7 @@ export const ContactSection = () => {
                   name="name"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="Pedro Machado..."
+                  placeholder={t('contact.namePlaceholder')}
                 />
               </div>
 
@@ -140,7 +190,7 @@ export const ContactSection = () => {
                   className="block text-sm font-medium mb-2"
                 >
                   {" "}
-                  Your Email
+                  {t('contact.emailTitle')}
                 </label>
                 <input
                   type="email"
@@ -148,7 +198,7 @@ export const ContactSection = () => {
                   name="email"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="john@gmail.com"
+                  placeholder={t('contact.emailPlaceholder')}
                 />
               </div>
 
@@ -158,14 +208,14 @@ export const ContactSection = () => {
                   className="block text-sm font-medium mb-2"
                 >
                   {" "}
-                  Your Message
+                  {t('contact.messageTitle')}
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
-                  placeholder="Hello, I'd like to talk about..."
+                  placeholder={t('contact.messagePlaceholder')}
                 />
               </div>
 
@@ -176,8 +226,8 @@ export const ContactSection = () => {
                   "cosmic-button w-full flex items-center justify-center gap-2"
                 )}
               >
-                {isSubmitting ? "Sending..." : "Send Message"}
-                <Send size={16} />
+                {isSubmitting ? t('contact.btnSending') : t('contact.btnSend')}
+                <Send size={20} />
               </button>
             </form>
           </div>

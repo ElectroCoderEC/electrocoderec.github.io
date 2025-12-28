@@ -50,7 +50,7 @@ export const Navbar = () => {
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-sm bg-card"  : "py-5"
+        isScrolled ? "py-3  bg-background/80 backdrop-blur-md shadow-sm bg-card"  : "py-5"
       )}
     >
       <div className="container relative flex items-center justify-between px-4">
@@ -60,7 +60,7 @@ export const Navbar = () => {
           href="#hero"
         >
           <span className="relative">
-            <span className="text-glow text-foreground">🇪🇨 &nbsp; ElectroCoderEC</span>
+            <span className="text-glow text-foreground">🇪🇨&nbsp; ElectroCoderEC</span>
             <span className="hidden sm:inline"> Portfolio</span>
           </span>
         </a>

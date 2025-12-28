@@ -1,46 +1,53 @@
 import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
+import { LanguageSelector } from "./LanguageSelector";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
-    const storedTheme = localStorage.getItem("theme");
-    if (storedTheme === "dark") {
-      setIsDarkMode(true);
+    // Detectar tema preferido del sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(prefersDark);
+    
+    if (prefersDark) {
       document.documentElement.classList.add("dark");
-    } else {
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
     }
   }, []);
 
   const toggleTheme = () => {
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
       setIsDarkMode(false);
     } else {
       document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
       setIsDarkMode(true);
     }
   };
 
   return (
-    <button
-      onClick={toggleTheme}
-      className={cn(
-        "fixed max-sm:hidden top-5 right-5 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outlin-hidden"
-      )}
-    >
-      {isDarkMode ? (
-        <Sun className="h-6 w-6 text-yellow-300" />
-      ) : (
-        <Moon className="h-6 w-6 text-blue-900" />
-      )}
-    </button>
+    <div className="fixed top-4 right-5 z-50 flex items-center gap-2 max-md:top-3 max-md:right-3">
+      {/* Language Selector - ocultar en mobile */}
+      <div className="max-md:hidden">
+        <LanguageSelector />
+      </div>
+      
+      {/* Theme Toggle - ocultar en mobile */}
+      <button
+        onClick={toggleTheme}
+        className={cn(
+          "max-md:hidden p-2 rounded-full transition-colors duration-300",
+          "hover:bg-primary/10 focus:outline-none"
+        )}
+        aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {isDarkMode ? (
+          <Sun className="h-6 w-6 text-yellow-300" />
+        ) : (
+          <Moon className="h-6 w-6 text-blue-900" />
+        )}
+      </button>
+    </div>
   );
 };

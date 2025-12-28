@@ -6,7 +6,7 @@ export const Footer = () => {
       {" "}
       <p className="text-sm text-muted-foreground">
         {" "}
-        &copy; {new Date().getFullYear()} ElectroCoder.ec
+        &copy; {new Date().getFullYear()} ElectroCoderEC.ec
       </p>
       <a
         href="#hero"

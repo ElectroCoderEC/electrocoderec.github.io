@@ -5,7 +5,8 @@ const LanguageContext = createContext();
 const LANGUAGES = {
   es: { name: 'Español', flag: '🇪🇸', code: 'es' },
   en: { name: 'English', flag: '🇺🇸', code: 'en' },
-  de: { name: 'Deutsch', flag: '🇩🇪', code: 'de' }
+  de: { name: 'Deutsch', flag: '🇩🇪', code: 'de' },
+  fr: { name: 'Français', flag: '🇫🇷', code: 'fr' }
 };
 
 // Detectar idioma del navegador

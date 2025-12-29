@@ -8,7 +8,7 @@ export const es = {
   },
 
   cv: 'Descargar CV', // O simplemente 'CV' si prefieres algo corto
-  dowloadPDF:'/Resume Sebastian Cuenca.pdf',
+  dowloadPDF:'/Resume Sebastian Cuenca ES.pdf',
 
   hero: {
     greeting: 'Hola, soy',

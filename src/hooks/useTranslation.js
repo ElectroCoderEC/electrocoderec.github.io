@@ -2,11 +2,13 @@ import { useLanguage } from '../context/LanguageContext';
 import { es } from '../translations/es';
 import { en } from '../translations/en';
 import { de } from '../translations/de';
+import { fr } from '../translations/fr';
 
 const translations = {
   es,
   en,
-  de
+  de,
+  fr
 };
 
 export const useTranslation = () => {

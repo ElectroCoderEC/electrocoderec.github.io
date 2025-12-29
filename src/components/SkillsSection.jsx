@@ -14,17 +14,41 @@ const skills = [
   { name: "Node.js", level: 80, category: "backend" },
   { name: "Express", level: 75, category: "backend" },
   { name: "MongoDB", level: 70, category: "backend" },
-  { name: "PostgreSQL", level: 65, category: "backend" },
-  { name: "GraphQL", level: 60, category: "backend" },
+  { name: "MySQL", level: 65, category: "backend" },
+  { name: "Python", level: 60, category: "backend" },
 
   // Tools
   { name: "Git/GitHub", level: 90, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
   { name: "Figma", level: 85, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
+  { name: "Matlab", level: 95, category: "tools" },
+  { name: "LabVIEW", level: 95, category: "tools" },
+  { name: "TIA Portal", level: 95, category: "tools" },
+  { name: "NodeRED", level: 95, category: "tools" },
+  { name: "Unity", level: 95, category: "tools" },
+  
+  
+  
+  
+
+   // PCB Design
+  { name: "KiCad", level: 70, category: "pcb design" },
+  { name: "Eagle", level: 90, category: "pcb design" },
+  { name: "Altium Designer", level: 80, category: "pcb design" },
+  { name: "Proteus", level: 90, category: "pcb design" },
+
+    // 3d Design
+  { name: "SolidWorks", level: 80, category: "3d design" },
+  { name: "Fusion 360", level: 80, category: "3d design" },
+  { name: "Blender", level: 80, category: "3d design" },
+  { name: "Factory I/O", level: 80, category: "3d design" },
+  { name: "Machines Simulator", level: 80, category: "3d design" },
+
+  
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+const categories = ["all", "frontend", "backend", "tools", "pcb design", "3d design"];
 
 export const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = useState("all");

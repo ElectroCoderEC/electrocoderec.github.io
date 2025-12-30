@@ -10,6 +10,34 @@ export const fr = {
   cv: 'Télécharger le CV',
   dowloadPDF: '/Resume Sebastian Cuenca.pdf',
 
+  // FRANCÉS (French)
+about: {
+    title: 'À propos de moi',
+    carrer: 'Ingénieur en Électronique, Contrôle et Réseaux Industriels',
+    description1: 'avec plus de huit ans d\'expérience dans les systèmes embarqués, l\'automatisation industrielle et le développement full-stack pour les plateformes web, mobiles et de bureau. J\'ai dirigé des projets de recherche et développement qui intègrent l\'IoT, l\'Intelligence Artificielle, la Vision par Ordinateur et la Réalité Virtuelle pour offrir des solutions innovantes dans des environnements industriels et académiques.',
+    btnGet: 'Entrer en contact',
+
+    subtitle1: 'Systèmes Embarqués',
+    description2: 'Développement de systèmes basés sur microcontrôleurs et FPGA avec expérience en RTOS et Linux',
+
+    subtitle2: 'Automatisation Industrielle',
+    description3: 'Compétent dans le développement et la mise en œuvre de solutions d\'automatisation utilisant des automates programmables, des systèmes SCADA et des protocoles de communication industrielle (Modbus, Profibus, OPC UA). Expérience dans l\'intégration de capteurs, d\'actionneurs et de systèmes de contrôle pour optimiser les processus industriels.',
+
+    subtitle3: 'Développement Full-Stack',
+    description4: 'Développement d\'applications web, mobiles et de bureau intégrant des bases de données (SQL/NoSQL)',
+    
+    subtitle4: 'Recherche et Développement',
+    description5: 'Direction de projets de R&D axés sur l\'intégration de technologies émergentes telles que l\'IA, la Vision par Ordinateur et la XR dans des applications pratiques.',
+
+    subtitle5: 'Conception de Produits',
+    description6: 'Utilisation dans la conception de modèles 3D et de prototypes pour produits numériques et physiques avec intégration XR (VR/AR/MR).',
+},
+
+skills: {
+  title: 'Mes Compétences',
+  description: 'Voici quelques-unes des technologies et outils avec lesquels j\'ai de l\'expérience :',
+},
+
   hero: {
     greeting: 'Bonjour, je suis',
     description: 'Passionné par la technologie et la science. Je suis autodidacte, discipliné, responsable et engagé dans mon travail. J’adore l’innovation.',

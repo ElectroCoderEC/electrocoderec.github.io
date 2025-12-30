@@ -31,14 +31,8 @@ export const ThemeToggle = () => {
   };
 
   const downloadSubmit = (e) => {
-   
-
-
     const targetFile = t('dowloadPDF');
     window.open(targetFile, "_blank", "noopener,noreferrer");
-  
-
-
   };
 
 

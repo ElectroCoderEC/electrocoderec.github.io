@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import { useTranslation } from "../hooks/useTranslation";
+
 
 const skills = [
   // Frontend
@@ -18,15 +20,15 @@ const skills = [
   { name: "Python", level: 60, category: "backend" },
 
   // Tools
-  { name: "Git/GitHub", level: 90, category: "tools" },
+  { name: "TIA Portal", level: 80, category: "tools" },
+  { name: "NodeRED", level: 95, category: "tools" },
+  { name: "Unity", level: 80, category: "tools" },
+  { name: "Git/GitHub", level: 80, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 85, category: "tools" },
-  { name: "VS Code", level: 95, category: "tools" },
+  { name: "Figma", level: 80, category: "tools" },
+  { name: "VS Code", level: 85, category: "tools" },
   { name: "Matlab", level: 95, category: "tools" },
   { name: "LabVIEW", level: 95, category: "tools" },
-  { name: "TIA Portal", level: 95, category: "tools" },
-  { name: "NodeRED", level: 95, category: "tools" },
-  { name: "Unity", level: 95, category: "tools" },
   
   
   
@@ -48,19 +50,49 @@ const skills = [
   
 ];
 
-const categories = ["all", "frontend", "backend", "tools", "pcb design", "3d design"];
+
+
+  
+
+
+
+/*const categories = ["all", "frontend", "backend", "tools", "pcb design", "3d design"];*/
+
+const categories = ["frontend", "backend", "tools", "pcb design", "3d design"];
 
 export const SkillsSection = () => {
-  const [activeCategory, setActiveCategory] = useState("all");
+
+  const { t } = useTranslation();
+
+  const [activeCategory, setActiveCategory] = useState("tools");
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
   );
+
+  
+// Esta lógica toma la traducción y separa la última palabra
+  const getFormattedTitle = () => {
+    const fullText = t('about.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
+    const words = fullText.split(" "); // Lo dividimos por espacios
+    
+    if (words.length <= 1) return fullText; // Si solo hay una palabra, no hace nada
+
+    const lastWord = words.pop(); // Extrae la última palabra: "Contacto"
+    const restOfText = words.join(" "); // Une el resto: "Ponte en"
+
+    return (
+      <>
+        {restOfText} <span className="text-primary">{lastWord}</span>
+      </>
+    );
+  };
+  
   return (
     <section id="skills" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          My <span className="text-primary"> Skills</span>
+            {getFormattedTitle()}
         </h2>
 
         <div className="flex flex-wrap justify-center gap-4 mb-12">

@@ -1,3 +1,6 @@
+import { Subtitles } from "lucide-react";
+import { de } from "./de";
+
 export const es = {
   nav: {
     home: 'Inicio',
@@ -9,6 +12,34 @@ export const es = {
 
   cv: 'Descargar CV', // O simplemente 'CV' si prefieres algo corto
   dowloadPDF:'/Resume Sebastian Cuenca ES.pdf',
+
+  // ESPAÑOL (Spanish)
+about: {
+    title: 'Sobre mí',
+    carrer: 'Ingeniero en Electrónica, Control y Redes Industriales',
+    description1: 'con más de ocho años de experiencia en sistemas embebidos, automatización industrial y desarrollo full-stack para plataformas web, móviles y de escritorio. He liderado proyectos de investigación y desarrollo que integran IoT, Inteligencia Artificial, Visión por Computadora y Realidad Virtual para ofrecer soluciones innovadoras en entornos industriales y académicos.',
+    btnGet: 'Ponte en contacto',
+
+    subtitle1: 'Sistemas Embebidos',
+    description2: 'Desarrollo sistemas basados en microcontroladores y FPGA con experiencia con RTOS y Linux',
+
+    subtitle2: 'Automatización Industrial',
+    description3: 'Hábil en el desarrollo e implementación de soluciones de automatización utilizando PLCs, sistemas SCADA y protocolos de comunicación industrial (Modbus, Profibus, OPC UA). Experiencia en la integración de sensores, actuadores y sistemas de control para optimizar procesos industriales.',   
+
+    subtitle3: 'Desarrollo Full-Stack',
+    description4: 'Desarrollo de aplicaciones web, móviles y de escritorio integrando bases de datos (SQL/NoSQL)',
+    
+    subtitle4: 'Investigación y Desarrollo',
+    description5: 'Liderazgo de proyectos de I+D enfocados en integrar tecnologías emergentes como IA, Visión por Computadora y XR en aplicaciones prácticas.',
+
+    Subtitle5: 'Diseño del Producto',
+    description6:'Uso en el diseño de modelos 3D y prototipos para productos digitales y físicos con integraci[on XR (VR/AR/MR).',
+  },
+
+  skills: {
+  title: 'Mis Habilidades',
+  description: 'Aquí hay algunas de las tecnologías y herramientas con las que tengo experiencia:',
+},
 
   hero: {
     greeting: 'Hola, soy',

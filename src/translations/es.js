@@ -21,7 +21,7 @@ about: {
     btnGet: 'Ponte en contacto',
 
     subtitle1: 'Sistemas Embebidos',
-    description2: 'Desarrollo sistemas basados en microcontroladores y FPGA con experiencia con RTOS y Linux',
+    description2: 'Desarrollo sistemas basados en microcontroladores y FPGA con experiencia en ROS2, RTOS y Linux',
 
     subtitle2: 'Automatización Industrial',
     description3: 'Hábil en el desarrollo e implementación de soluciones de automatización utilizando PLCs, sistemas SCADA y protocolos de comunicación industrial (Modbus, Profibus, OPC UA). Experiencia en la integración de sensores, actuadores y sistemas de control para optimizar procesos industriales.',   
@@ -33,13 +33,35 @@ about: {
     description5: 'Liderazgo de proyectos de I+D enfocados en integrar tecnologías emergentes como IA, Visión por Computadora y XR en aplicaciones prácticas.',
 
     Subtitle5: 'Diseño del Producto',
-    description6:'Uso en el diseño de modelos 3D y prototipos para productos digitales y físicos con integraci[on XR (VR/AR/MR).',
+    description6:'Diseño y modelado 3D con herramientas CAD para crear prototipos innovadores de productos digitales y físicos, con experiencias inmersivas en realidad extendida (VR/AR/MR).',
   },
 
   skills: {
   title: 'Mis Habilidades',
   description: 'Aquí hay algunas de las tecnologías y herramientas con las que tengo experiencia:',
 },
+
+
+projects:{
+   title: 'Proyectos Destacados',
+  buttontxt:'Visita mi Github',
+  description: 'Aquí hay algunos de mis proyectos recientes. Cada proyecto fue cuidadosamente elaborado con atención al detalle, rendimiento y experiencia del usuario.',
+
+   project1: {
+      title: 'FIREWORKS SMART RF',
+      description: 'Consola para sistemas de pirotecnia inteligente con aplicación móvil'
+    },
+    project2: {
+      title: 'DESIGN RF PCB', 
+      description: 'Diseño de PCBs RF para aplicaciones de alta frecuencia.'
+    },
+    project3: {
+      title: 'DIGITAL TWIN FOR INDUSTRIAL AUTOMATION',
+      description: 'Gemelo digital usando MetaQuest para sistemas de automatización industrial.'
+    }
+},
+
+
 
   hero: {
     greeting: 'Hola, soy',

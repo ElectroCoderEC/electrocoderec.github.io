@@ -19,7 +19,7 @@ export const en = {
     btnGet: 'Get in touch',
 
     subtitle1: 'Embedded Systems',
-    description2: 'Development of microcontroller and FPGA-based systems with experience in RTOS and Linux',
+    description2: 'Development of microcontroller and FPGA-based systems with experience in ROS2, RTOS and Linux',
 
     subtitle2: 'Industrial Automation',
     description3: 'Skilled in developing and implementing automation solutions using PLCs, SCADA systems, and industrial communication protocols (Modbus, Profibus, OPC UA). Experience in integrating sensors, actuators, and control systems to optimize industrial processes.',
@@ -31,13 +31,35 @@ export const en = {
     description5: 'Leadership of R&D projects focused on integrating emerging technologies such as AI, Computer Vision, and XR into practical applications.',
 
     subtitle5: 'Product Design',
-    description6: 'Use in the design of 3D models and prototypes for digital and physical products with XR integration (VR/AR/MR).',
+    description6: '3D design and modeling with CAD tools to create innovative prototypes for digital and physical products, featuring immersive extended reality experiences (VR/AR/MR).',
 },
 
-skills: {
-  title: 'My Skills',
-  description: 'Here are some of the technologies and tools I have experience with:',
-},
+  skills: {
+    title: 'My Skills',
+    description: 'Here are some of the technologies and tools I have experience with:',
+  },
+
+
+  projects: {
+    title: 'Featured Projects',
+    buttontxt: 'Check my Github',
+    description: 'Here are some of my recent projects. Each project was carefully crafted with attention to detail, performance, and user experience.',
+    
+    project1: {
+      title: 'FIREWORKS SMART RF',
+      description: 'Console for smart fireworks systems with mobile application.'
+    },
+    project2: {
+      title: 'DESIGN RF PCB', 
+      description: 'Design of RF PCBs for high-frequency applications.'
+    },
+    project3: {
+      title: 'DIGITAL TWIN FOR INDUSTRIAL AUTOMATION',
+      description: 'MetaQuest-based digital twin for industrial automation systems.'
+    }
+
+  },
+
 
   hero: {
     greeting: 'Hi, I\'m',

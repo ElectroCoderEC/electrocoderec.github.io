@@ -18,7 +18,7 @@ about: {
     btnGet: 'Kontakt aufnehmen',
 
     subtitle1: 'Eingebettete Systeme',
-    description2: 'Entwicklung von Systemen auf Basis von Mikrocontrollern und FPGAs mit Erfahrung in RTOS und Linux',
+    description2: 'Entwicklung von Systemen auf Basis von Mikrocontrollern und FPGAs mit Erfahrung in ROS2, RTOS und Linux',
 
     subtitle2: 'Industrielle Automatisierung',
     description3: 'Kompetent in der Entwicklung und Implementierung von Automatisierungslösungen unter Verwendung von SPSen, SCADA-Systemen und industriellen Kommunikationsprotokollen (Modbus, Profibus, OPC UA). Erfahrung in der Integration von Sensoren, Aktoren und Steuerungssystemen zur Optimierung industrieller Prozesse.',
@@ -30,13 +30,35 @@ about: {
     description5: 'Leitung von F&E-Projekten mit Schwerpunkt auf der Integration aufkommender Technologien wie KI, Computer Vision und XR in praktische Anwendungen.',
 
     subtitle5: 'Produktdesign',
-    description6: 'Einsatz im Design von 3D-Modellen und Prototypen für digitale und physische Produkte mit XR-Integration (VR/AR/MR).',
+    description6: '3D-Design und -Modellierung mit CAD-Tools zur Erstellung innovativer Prototypen für digitale und physische Produkte mit immersiven Extended-Reality-Erlebnissen (VR/AR/MR).',
+},
+
+projects:{
+   title: 'Projekte Highlights',
+  buttontxt:'Besuchen Sie mein GitHub-Profil.',
+  description: 'Hier sind einige meiner jüngsten Projekte. Jedes Projekt wurde sorgfältig mit Augenmerk auf Details, Leistung und Benutzererfahrung erstellt.',
+
+   project1: {
+      title: 'FIREWORKS SMART RF',
+      description: 'Konsole für intelligente Feuerwerksysteme mit mobiler Anwendung.'
+    },
+     project2: {
+      title: 'DESIGN RF PCB', 
+      description: 'Design von RF-PCBs für Hochfrequenzanwendungen.'
+    },
+    project3: {
+      title: 'DIGITAL TWIN',
+      description: 'MetaQuest-basiertes digitales Zwilling für industrielle Automatisierungssysteme.'
+    }
 },
 
 
 skills: {  title: 'Meine Fähigkeiten',
   description: 'Hier sind einige der Technologien und Werkzeuge, mit denen ich Erfahrung habe:',
+  
 },
+
+
 
   hero: {
     greeting: 'Hallo, ich bin',

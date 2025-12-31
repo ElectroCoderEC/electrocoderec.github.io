@@ -18,7 +18,7 @@ about: {
     btnGet: 'Entrer en contact',
 
     subtitle1: 'Systèmes Embarqués',
-    description2: 'Développement de systèmes basés sur microcontrôleurs et FPGA avec expérience en RTOS et Linux',
+    description2: 'Développement de systèmes basés sur microcontrôleurs et FPGA avec expérience en ROS2, RTOS et Linux',
 
     subtitle2: 'Automatisation Industrielle',
     description3: 'Compétent dans le développement et la mise en œuvre de solutions d\'automatisation utilisant des automates programmables, des systèmes SCADA et des protocoles de communication industrielle (Modbus, Profibus, OPC UA). Expérience dans l\'intégration de capteurs, d\'actionneurs et de systèmes de contrôle pour optimiser les processus industriels.',
@@ -30,8 +30,28 @@ about: {
     description5: 'Direction de projets de R&D axés sur l\'intégration de technologies émergentes telles que l\'IA, la Vision par Ordinateur et la XR dans des applications pratiques.',
 
     subtitle5: 'Conception de Produits',
-    description6: 'Utilisation dans la conception de modèles 3D et de prototypes pour produits numériques et physiques avec intégration XR (VR/AR/MR).',
+    description6: 'Conception et modélisation 3D avec des outils CAO pour créer des prototypes innovants de produits numériques et physiques, avec des expériences immersives en réalité étendue (VR/AR/MR).',
 },
+
+projects:{
+  title: 'Projets en Vedette',
+  buttontxt:'Visitez mon Github',
+  description:'Découvrez une sélection de projets qui mettent en valeur mes compétences en ingénierie, développement full-stack et automatisation industrielle. Chaque projet illustre mon engagement envers l\'innovation et la résolution de problèmes complexes.',
+
+  project1: {
+      title: 'FIREWORKS SMART RF',
+      description: 'Console pour systèmes de feux d\'artifice intelligents avec application mobile.'
+    },
+     project2: {
+      title: 'DESIGN RF PCB', 
+      description: 'Design de PCB RF pour des applications à haute fréquence.'
+    },
+    project3: {
+      title: 'DIGITAL TWIN',
+      description: 'MetaQuest-based digital twin pour les systèmes d\'automatisation industrielle.'
+    }
+},
+
 
 skills: {
   title: 'Mes Compétences',

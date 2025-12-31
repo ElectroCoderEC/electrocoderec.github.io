@@ -10,14 +10,21 @@ const skills = [
   { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
   { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Next.js", level: 80, category: "frontend" },
+  { name: "Angular", level: 80, category: "frontend" },
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
-  { name: "MySQL", level: 65, category: "backend" },
+  { name: "C/C++", level: 75, category: "backend" },
+  { name: "Java", level: 70, category: "backend" },
+  { name: "C#", level: 65, category: "backend" },
   { name: "Python", level: 60, category: "backend" },
+
+  // Databases
+  { name: "SQL Server", level: 80, category: "database" },
+  { name: "MongoDB", level: 70, category: "database" },
+  { name: "MySQL", level: 75, category: "database" },
+  { name: "Firebase", level: 70, category: "database" },
+  { name: "PostgreSQL", level: 70, category: "database" },
 
   // Tools
   { name: "TIA Portal", level: 80, category: "tools" },
@@ -30,10 +37,6 @@ const skills = [
   { name: "Matlab", level: 95, category: "tools" },
   { name: "LabVIEW", level: 95, category: "tools" },
   
-  
-  
-  
-
    // PCB Design
   { name: "KiCad", level: 70, category: "pcb design" },
   { name: "Eagle", level: 90, category: "pcb design" },
@@ -46,19 +49,12 @@ const skills = [
   { name: "Blender", level: 80, category: "3d design" },
   { name: "Factory I/O", level: 80, category: "3d design" },
   { name: "Machines Simulator", level: 80, category: "3d design" },
-
-  
 ];
-
-
-
-  
-
 
 
 /*const categories = ["all", "frontend", "backend", "tools", "pcb design", "3d design"];*/
 
-const categories = ["frontend", "backend", "tools", "pcb design", "3d design"];
+const categories = ["frontend", "backend", "tools", "database", "pcb design", "3d design"];
 
 export const SkillsSection = () => {
 
@@ -68,12 +64,12 @@ export const SkillsSection = () => {
 
   const filteredSkills = skills.filter(
     (skill) => activeCategory === "all" || skill.category === activeCategory
-  );
+);
 
   
 // Esta lógica toma la traducción y separa la última palabra
   const getFormattedTitle = () => {
-    const fullText = t('about.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
+    const fullText = t('skills.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
     const words = fullText.split(" "); // Lo dividimos por espacios
     
     if (words.length <= 1) return fullText; // Si solo hay una palabra, no hace nada

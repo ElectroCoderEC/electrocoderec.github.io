@@ -43,7 +43,7 @@ export const AboutSection = () => {
               {t('about.carrer')}
             </h3>
 
-            <p className="text-muted-foreground">
+            <p className="text-left text-muted-foreground">
               {t('about.description1')}
             </p>
 
@@ -98,7 +98,7 @@ export const AboutSection = () => {
                 </div>
 
                 <div className="text-left">
-                  <h4 className="font-semibold text-lg">{t('about.Subtitle5')}</h4>
+                  <h4 className="font-semibold text-lg">{t('about.subtitle5')}</h4>
                   <p className="text-muted-foreground">
                     {t('about.description6')}
                   </p>

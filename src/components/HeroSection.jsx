@@ -1,6 +1,5 @@
 import { ArrowDown } from "lucide-react";
 import { useTranslation } from "../hooks/useTranslation";
-
 export const HeroSection = () => {
   const { t } = useTranslation();
   

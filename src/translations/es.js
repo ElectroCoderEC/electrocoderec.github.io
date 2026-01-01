@@ -31,8 +31,8 @@ about: {
     
     subtitle4: 'Investigación y Desarrollo',
     description5: 'Liderazgo de proyectos de I+D enfocados en integrar tecnologías emergentes como IA, Visión por Computadora y XR en aplicaciones prácticas.',
-
-    Subtitle5: 'Diseño del Producto',
+    subtitle5: 'Diseño del Producto',
+    Subtitle6: 'Diseño del Producto',
     description6:'Diseño y modelado 3D con herramientas CAD para crear prototipos innovadores de productos digitales y físicos, con experiencias inmersivas en realidad extendida (VR/AR/MR).',
   },
 
@@ -65,7 +65,7 @@ projects:{
 
   hero: {
     greeting: 'Hola, soy',
-    description: 'Soy apasionado por la tecnología y la ciencia. Soy autodidacta, disciplinado, responsable y comprometido con el trabajo. Me encanta la innovación.',
+    description: 'Entusiasta de la tecnología y la ciencia con un enfoque autodidacta para el aprendizaje y la resolución de problemas. Aporto disciplina, responsabilidad y un compromiso genuino a cada proyecto, buscando constantemente soluciones innovadoras que rompan barreras y generen un impacto significativo.',
     cta: 'Ver Mi Trabajo',
     scroll: 'Desplazar'
   },

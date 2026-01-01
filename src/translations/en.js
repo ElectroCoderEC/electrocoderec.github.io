@@ -29,8 +29,8 @@ export const en = {
     
     subtitle4: 'Research and Development',
     description5: 'Leadership of R&D projects focused on integrating emerging technologies such as AI, Computer Vision, and XR into practical applications.',
-
     subtitle5: 'Product Design',
+    subtitle6: 'Product Design',
     description6: '3D design and modeling with CAD tools to create innovative prototypes for digital and physical products, featuring immersive extended reality experiences (VR/AR/MR).',
 },
 
@@ -63,7 +63,7 @@ export const en = {
 
   hero: {
     greeting: 'Hi, I\'m',
-    description: 'I am passionate about technology and science. I\'m self-taught, disciplined, responsible and committed to work. I love innovation.',
+    description: 'Technology and science enthusiast with a self-driven approach to learning and problem-solving. I bring discipline, accountability, and genuine commitment to every project, constantly seeking innovative solutions that push boundaries and create meaningful impact.',
     cta: 'View My Work',
     scroll: 'Scroll'
   },

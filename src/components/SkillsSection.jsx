@@ -7,48 +7,51 @@ const skills = [
   // Frontend
   { name: "HTML/CSS", level: 95, category: "frontend" },
   { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
-  { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
-  { name: "Angular", level: 80, category: "frontend" },
+  { name: "React", level: 80, category: "frontend" },
+  { name: "TypeScript", level: 65, category: "frontend" },
+  { name: "Tailwind CSS", level: 80, category: "frontend" },
+  { name: "Angular", level: 70, category: "frontend" },
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
-  { name: "C/C++", level: 75, category: "backend" },
-  { name: "Java", level: 70, category: "backend" },
-  { name: "C#", level: 65, category: "backend" },
-  { name: "Python", level: 60, category: "backend" },
+  { name: "C/C++", level: 95, category: "backend" },
+  { name: "Java", level: 80, category: "backend" },
+  { name: "C#", level: 75, category: "backend" },
+  { name: "Python", level: 95, category: "backend" },
 
   // Databases
   { name: "SQL Server", level: 80, category: "database" },
   { name: "MongoDB", level: 70, category: "database" },
-  { name: "MySQL", level: 75, category: "database" },
-  { name: "Firebase", level: 70, category: "database" },
+  { name: "MySQL", level: 85, category: "database" },
+  { name: "Firebase", level: 90, category: "database" },
   { name: "PostgreSQL", level: 70, category: "database" },
 
   // Tools
-  { name: "TIA Portal", level: 80, category: "tools" },
+  { name: "TIA Portal", level: 85, category: "tools" },
   { name: "NodeRED", level: 95, category: "tools" },
   { name: "Unity", level: 80, category: "tools" },
   { name: "Git/GitHub", level: 80, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
-  { name: "Figma", level: 80, category: "tools" },
-  { name: "VS Code", level: 85, category: "tools" },
-  { name: "Matlab", level: 95, category: "tools" },
-  { name: "LabVIEW", level: 95, category: "tools" },
+  { name: "Figma", level: 70, category: "tools" },
+  { name: "EPLAN P8", level: 80, category: "tools" },
+  { name: "Matlab", level: 85, category: "tools" },
+  { name: "LabVIEW", level: 85, category: "tools" },
   
    // PCB Design
-  { name: "KiCad", level: 70, category: "pcb design" },
+  { name: "KiCad", level: 80, category: "pcb design" },
   { name: "Eagle", level: 90, category: "pcb design" },
-  { name: "Altium Designer", level: 80, category: "pcb design" },
-  { name: "Proteus", level: 90, category: "pcb design" },
+  { name: "Altium Designer", level: 85, category: "pcb design" },
+  { name: "Proteus", level: 95, category: "pcb design" },
+  { name: "EasyEDA", level: 90, category: "pcb design" },
+
+   
 
     // 3d Design
   { name: "SolidWorks", level: 80, category: "3d design" },
   { name: "Fusion 360", level: 80, category: "3d design" },
-  { name: "Blender", level: 80, category: "3d design" },
-  { name: "Factory I/O", level: 80, category: "3d design" },
-  { name: "Machines Simulator", level: 80, category: "3d design" },
+  { name: "Blender", level: 70, category: "3d design" },
+  { name: "Factory IO", level: 80, category: "3d design" },
+  { name: "Machines Simulator", level: 65, category: "3d design" },
 ];
 
 

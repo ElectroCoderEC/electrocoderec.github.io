@@ -28,8 +28,8 @@ about: {
     
     subtitle4: 'Recherche et Développement',
     description5: 'Direction de projets de R&D axés sur l\'intégration de technologies émergentes telles que l\'IA, la Vision par Ordinateur et la XR dans des applications pratiques.',
-
     subtitle5: 'Conception de Produits',
+    subtitle6: 'Conception de Produits',
     description6: 'Conception et modélisation 3D avec des outils CAO pour créer des prototypes innovants de produits numériques et physiques, avec des expériences immersives en réalité étendue (VR/AR/MR).',
 },
 
@@ -60,7 +60,7 @@ skills: {
 
   hero: {
     greeting: 'Bonjour, je suis',
-    description: 'Passionné par la technologie et la science. Je suis autodidacte, discipliné, responsable et engagé dans mon travail. J’adore l’innovation.',
+    description: 'Passionné par la technologie et la science, j\'adopte une approche autodidacte pour l\'apprentissage et la résolution de problèmes. J\'apporte discipline, responsabilité et engagement sincère à chaque projet, cherchant constamment des solutions innovantes qui repoussent les limites et créent un impact significatif.',
     cta: 'Voir mes projets',
     scroll: 'Défiler'
   },

@@ -28,8 +28,8 @@ about: {
     
     subtitle4: 'Forschung und Entwicklung',
     description5: 'Leitung von F&E-Projekten mit Schwerpunkt auf der Integration aufkommender Technologien wie KI, Computer Vision und XR in praktische Anwendungen.',
-
     subtitle5: 'Produktdesign',
+    subtitle6: 'Produktdesign',
     description6: '3D-Design und -Modellierung mit CAD-Tools zur Erstellung innovativer Prototypen für digitale und physische Produkte mit immersiven Extended-Reality-Erlebnissen (VR/AR/MR).',
 },
 
@@ -62,7 +62,7 @@ skills: {  title: 'Meine Fähigkeiten',
 
   hero: {
     greeting: 'Hallo, ich bin',
-    description: 'Ich bin leidenschaftlich an Technologie und Wissenschaft interessiert. Ich bin Autodidakt, diszipliniert, verantwortungsbewusst und engagiert. Ich liebe Innovation.',
+    description: 'Technologie- und Wissenschaftsbegeisterter mit einem selbstgesteuerten Ansatz zum Lernen und zur Problemlösung. Ich bringe Disziplin, Verantwortungsbewusstsein und echtes Engagement in jedes Projekt ein und suche ständig nach innovativen Lösungen, die Grenzen verschieben und bedeutende Auswirkungen erzielen.',
     cta: 'Meine Arbeit ansehen',
     scroll: 'Scrollen'
   },

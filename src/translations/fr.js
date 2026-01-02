@@ -11,54 +11,69 @@ export const fr = {
   dowloadPDF: '/pdf/Resume Sebastian Cuenca.pdf',
 
   // FRANCÉS (French)
-about: {
+  about: {
     title: 'À propos de moi',
     carrer: 'Ingénieur en Électronique, Contrôle et Réseaux Industriels',
-    description1: 'avec plus de huit ans d\'expérience dans les systèmes embarqués, l\'automatisation industrielle et le développement full-stack pour les plateformes web, mobiles et de bureau. J\'ai dirigé des projets de recherche et développement qui intègrent l\'IoT, l\'Intelligence Artificielle, la Vision par Ordinateur et la Réalité Virtuelle pour offrir des solutions innovantes dans des environnements industriels et académiques.',
+    description1: 'avec plus de huit ans d\'expérience dans les systèmes embarqués, l\'automatisation industrielle et le développement full-stack. J\'ai dirigé des projets de recherche et développement qui exploitent l\'Intelligence Artificielle, la Vision par Ordinateur et les expériences immersives pour offrir des solutions innovantes dans des environnements industriels et académiques.',
     btnGet: 'Entrer en contact',
 
     subtitle1: 'Systèmes Embarqués',
-    description2: 'Développement de systèmes basés sur microcontrôleurs et FPGA avec expérience en ROS2, RTOS et Linux',
+    description2: 'Développement de systèmes basés sur des microcontrôleurs et des FPGA avec une expérience en robotique, IoT, ROS2, RTOS et Linux.',
 
     subtitle2: 'Automatisation Industrielle',
     description3: 'Compétent dans le développement et la mise en œuvre de solutions d\'automatisation utilisant des automates programmables, des systèmes SCADA et des protocoles de communication industrielle (Modbus, Profibus, OPC UA). Expérience dans l\'intégration de capteurs, d\'actionneurs et de systèmes de contrôle pour optimiser les processus industriels.',
 
     subtitle3: 'Développement Full-Stack',
-    description4: 'Développement d\'applications web, mobiles et de bureau intégrant des bases de données (SQL/NoSQL)',
-    
+    description4: 'Développement d\'applications web, mobiles et de bureau, conception UX/UI, gestion de bases de données (SQL/NoSQL)',
+
     subtitle4: 'Recherche et Développement',
     description5: 'Direction de projets de R&D axés sur l\'intégration de technologies émergentes telles que l\'IA, la Vision par Ordinateur et la XR dans des applications pratiques.',
     subtitle5: 'Conception de Produits',
     subtitle6: 'Conception de Produits',
-    description6: 'Conception et modélisation 3D avec des outils CAO pour créer des prototypes innovants de produits numériques et physiques, avec des expériences immersives en réalité étendue (VR/AR/MR).',
-},
+    description6: 'Modélisation 3D avec des outils CAO pour créer des prototypes avec des expériences immersives en réalité étendue (VR/AR/MR).',
+  },
 
-projects:{
-  title: 'Projets en Vedette',
-  buttontxt:'Visitez mon Github',
-  description:'Découvrez une sélection de projets qui mettent en valeur mes compétences en ingénierie, développement full-stack et automatisation industrielle. Chaque projet illustre mon engagement envers l\'innovation et la résolution de problèmes complexes.',
-  txtproject:'Voir la Galerie',
-  stateImage: "Image {current} de {total}",
-  
-  project1: {
+  projects: {
+    title: 'Projets en Vedette',
+    buttontxt: 'Visitez mon Github',
+    description: 'Voici quelques-uns de mes projets récents. Chaque projet a été soigneusement élaboré avec une attention particulière aux détails, à la performance et à l\'expérience utilisateur.',
+    txtproject: 'Voir la Galerie',
+    stateImage: "Image {current} de {total}",
+
+    project1: {
       title: 'FIREWORKS SMART RF',
       description: 'Console pour systèmes de feux d\'artifice intelligents avec application mobile.'
     },
-     project2: {
-      title: 'DESIGN RF PCB', 
+    project2: {
+      title: 'DESIGN RF PCB',
       description: 'Design de PCB RF pour des applications à haute fréquence.'
     },
     project3: {
-      title: 'DIGITAL TWIN',
+      title: 'Jumeau Numérique pour l\'Automatisation Industrielle',
       description: 'MetaQuest-based digital twin pour les systèmes d\'automatisation industrielle.'
+    },
+    project4: {
+      title: 'IHM pour Turbines Hydrauliques',
+      description: 'Système d\'acquisition de données pour les processus de maintenance prédictive.'
+    },
+    project5: {
+      title: 'Développement d\'Applications Mobiles',
+      description: 'Conception et développement d\'applications mobiles multiplateformes pour différents secteurs.'
     }
-},
+  },
 
+  skills: {
+    title: 'Mes Compétences',
+    description: 'Voici quelques-unes des technologies et outils avec lesquels j\'ai de l\'expérience :',
 
-skills: {
-  title: 'Mes Compétences',
-  description: 'Voici quelques-unes des technologies et outils avec lesquels j\'ai de l\'expérience :',
-},
+    frontend: 'FrontEnd',
+    backend: 'BackEnd',
+    tools: 'Outils',
+    databases: 'Bases de Données',
+    pcb: 'Conception de PCB',
+    design: 'Conception 3D'
+
+  },
 
   hero: {
     greeting: 'Bonjour, je suis',

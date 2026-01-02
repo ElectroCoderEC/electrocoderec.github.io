@@ -13,23 +13,23 @@ export const Navbar = () => {
 
 
   const playSoundCursor = () => {
-  const audio = new Audio("/sounds/cursor.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/cursor.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
-  
+
   const playSoundOpen = () => {
-  const audio = new Audio("/sounds/open.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/open.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
-  
+
   const playSoundClose = () => {
-  const audio = new Audio("/sounds/close.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/close.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
   const navItems = [
@@ -50,7 +50,7 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
-    
+
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
 
@@ -62,7 +62,7 @@ export const Navbar = () => {
   const toggleTheme = () => {
 
     playSoundCursor();
-      
+
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
@@ -73,23 +73,23 @@ export const Navbar = () => {
   };
 
 
-const toggleMenu = () => {
-  
-  if (isMenuOpen) {
-    playSoundClose();
-  }
-  else{
-    playSoundOpen();
-  }
+  const toggleMenu = () => {
 
-  setIsMenuOpen(prev => !prev);
-};
+    if (isMenuOpen) {
+      playSoundClose();
+    }
+    else {
+      playSoundOpen();
+    }
+
+    setIsMenuOpen(prev => !prev);
+  };
 
   return (
     <nav
       className={cn(
         "fixed w-full z-40 transition-all duration-300",
-        isScrolled ? "py-3   shadow-sm bg-card"  : "py-5"
+        isScrolled ? "py-3   shadow-sm bg-card" : "py-5"
       )}
     >
       <div className="container relative flex items-center justify-between px-4">
@@ -158,11 +158,11 @@ const toggleMenu = () => {
           <div className="flex flex-col space-y-8 text-xl text-center">
             {navItems.map((item, key) => (
               <a
-                
+
                 key={key}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                onClick={() => setIsMenuOpen(false)}
+                onClick={() => { setIsMenuOpen(false); playSoundCursor(); }}
               >
                 {item.name}
               </a>

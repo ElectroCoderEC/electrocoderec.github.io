@@ -7,11 +7,10 @@ export const LanguageSelector = () => {
   const { language, changeLanguage, languages } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
-  
   const playSoundSelect = () => {
-  const audio = new Audio("/sounds/select.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/select.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
   return (
@@ -35,7 +34,7 @@ export const LanguageSelector = () => {
             className="fixed inset-0 z-40"
             onClick={() => setIsOpen(false)}
           />
-          
+
           {/* Dropdown menu */}
           <div className="absolute right-0 mt-2 w-48 rounded-lg bg-background border border-border shadow-lg z-50 overflow-hidden">
             {Object.entries(languages).map(([code, lang]) => (

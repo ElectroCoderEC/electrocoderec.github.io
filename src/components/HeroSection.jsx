@@ -4,12 +4,11 @@ export const HeroSection = () => {
   const { t } = useTranslation();
 
   const playSound = () => {
-  const audio = new Audio("/sounds/letter.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/letter.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
-  
   return (
     <section
       id="hero"
@@ -30,7 +29,7 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-            {t('hero.description')}
+           <i> {t('hero.description')} </i>
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">

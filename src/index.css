@@ -17,7 +17,7 @@
   --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
   --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
   --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
-  --animate-meteor: meteor 5s linear infinite;
+ 
 
   @keyframes float {
     0%,
@@ -28,15 +28,7 @@
       transform: translateY(-10px);
     }
   }
-  @keyframes pulse-subtle {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.8;
-    }
-  }
+ 
   @keyframes fade-in {
     from {
       opacity: 0;
@@ -47,19 +39,7 @@
       transform: translateY(0);
     }
   }
-  @keyframes meteor {
-    0% {
-      transform: rotate(215deg) translateX(0);
-      opacity: 1;
-    }
-    70% {
-      opacity: 1;
-    }
-    100% {
-      transform: rotate(215deg) translateX(-500px);
-      opacity: 0;
-    }
-  }
+ 
 }
 
 @layer base {
@@ -295,4 +275,102 @@
     left: -100%;
   }
 }
+
+
+
+
+/* =========================================
+   ANIMACIONES ESPACIALES MEJORADAS
+   ========================================= */
+
+/* 1. ESTRELLAS: Efecto "Flash" potente */
+@keyframes twinkle-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    box-shadow: 0 0 0 transparent; /* Sin sombra en reposo */
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.8); /* Crece casi el doble para que se "note" */
+    /* Sombra blanca brillante e intensa */
+    box-shadow: 0 0 12px 2px rgba(255, 255, 255, 1); 
+    background-color: #fff;
+  }
+}
+
+/* 2. ESTRELLAS: Pulso de fondo */
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1); }
+}
+
+/* 3. METEOROS: Viaje */
+@keyframes meteor-travel {
+  0% {
+    transform: rotate(215deg) translateX(0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1; /* Aparece rápido */
+  }
+  80% {
+    opacity: 1; /* Se mantiene visible casi todo el trayecto */
+  }
+  100% {
+    transform: rotate(215deg) translateX(-1000px); /* Distancia larga */
+    opacity: 0;
+  }
+}
+
+/* --- CLASES --- */
+
+.star-base {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  will-change: opacity, transform;
+}
+
+.star-twinkle {
+  animation: twinkle-glow infinite ease-in-out;
+}
+
+.star-pulse {
+  animation: pulse-soft infinite ease-in-out;
+}
+
+.meteor-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 2px;
+  /* Degradado más suave para la cola */
+  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 40%, transparent 100%);
+  transform: rotate(215deg);
+  opacity: 0;
+  animation: meteor-travel linear infinite;
+  border-radius: 9999px;
+  /* Resplandor alrededor de todo el cuerpo del meteoro */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); 
+}
+
+/* Cabeza del meteoro (Bola de fuego) */
+.meteor-effect::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px; /* Cabeza más grande */
+  height: 6px;
+  border-radius: 50%;
+  background: #fff;
+  left: 0;
+  /* Brillo muy fuerte en la punta */
+  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+  z-index: 10;
+}
+
 /* marquee end */
+
+

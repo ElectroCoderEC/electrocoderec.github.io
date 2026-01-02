@@ -2,21 +2,18 @@ import { Briefcase, Code, User } from "lucide-react";
 import { useTranslation } from "../hooks/useTranslation";
 
 export const AboutSection = () => {
-  
   const { t } = useTranslation();
 
-  
   const playSound = () => {
-  const audio = new Audio("/sounds/letter.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/letter.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
-  
   const playSoundCV = () => {
-  const audio = new Audio("/sounds/item.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/item.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
   const downloadSubmit = (e) => {
@@ -24,14 +21,11 @@ export const AboutSection = () => {
     const targetFile = t('dowloadPDF');
     window.open(targetFile, "_blank", "noopener,noreferrer");
   };
-
-
-
   // Esta lógica toma la traducción y separa la última palabra
   const getFormattedTitle = () => {
     const fullText = t('about.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
     const words = fullText.split(" "); // Lo dividimos por espacios
-    
+
     if (words.length <= 1) return fullText; // Si solo hay una palabra, no hace nada
 
     const lastWord = words.pop(); // Extrae la última palabra: "Contacto"
@@ -43,7 +37,6 @@ export const AboutSection = () => {
       </>
     );
   };
-
 
   return (
     <section id="about" className="py-24 px-4 relative">
@@ -63,14 +56,12 @@ export const AboutSection = () => {
               {t('about.description1')}
             </p>
 
-         
-
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a 
+              <a
                 onClick={playSound}
-              href="#contact" className="cosmic-button">
+                href="#contact" className="cosmic-button">
                 {" "}
-               {t('about.btnGet')}
+                {t('about.btnGet')}
               </a>
 
               <button

@@ -8,7 +8,7 @@ import {
   Twitch,
   Twitter,
   Facebook,
-  
+
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useToast } from "@/hooks/use-toast";
@@ -21,16 +21,16 @@ export const ContactSection = () => {
   const { t } = useTranslation();
 
   const playSound = () => {
-  const audio = new Audio("/sounds/letter.wav");
-  audio.currentTime = 0;
-  audio.play();
+    const audio = new Audio("/sounds/letter.wav");
+    audio.currentTime = 0;
+    audio.play();
   };
 
- // Esta lógica toma la traducción y separa la última palabra
+  // Esta lógica toma la traducción y separa la última palabra
   const getFormattedTitle = () => {
     const fullText = t('contact.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
     const words = fullText.split(" "); // Lo dividimos por espacios
-    
+
     if (words.length <= 1) return fullText; // Si solo hay una palabra, no hace nada
 
     const lastWord = words.pop(); // Extrae la última palabra: "Contacto"
@@ -43,55 +43,52 @@ export const ContactSection = () => {
     );
   };
 
-  
   const handleSubmit = async (e) => {
-  playSound();
-  e.preventDefault();
-  setIsSubmitting(true);
+    playSound();
+    e.preventDefault();
+    setIsSubmitting(true);
+    // Capturamos los datos del formulario
+    const formData = new FormData(e.target);
+    // Tu Access Key de Web3Forms (Consíguela gratis en https://web3forms.com/)
+    // Solo necesitas poner tu email y te la envían al instante
+    formData.append("access_key", "228363bb-ec32-4b67-a0ad-2d04e155562e");
 
-  // Capturamos los datos del formulario
-  const formData = new FormData(e.target);
-  
-  // Tu Access Key de Web3Forms (Consíguela gratis en https://web3forms.com/)
-  // Solo necesitas poner tu email y te la envían al instante
-  formData.append("access_key", "228363bb-ec32-4b67-a0ad-2d04e155562e"); 
-
-  try {
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData
-    });
-
-    const data = await response.json();
-
-    if (data.success) {
-      toast({
-        title: t('contact.ToastTitle'),
-        description: t('contact.ToastDescription'),
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
       });
-      e.target.reset(); // Esto limpia todos los campos del formulario
-    } else {
-      // Opcional: Toast de error si algo sale mal
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast({
+          title: t('contact.ToastTitle'),
+          description: t('contact.ToastDescription'),
+        });
+        e.target.reset(); // Esto limpia todos los campos del formulario
+      } else {
+        // Opcional: Toast de error si algo sale mal
+        toast({
+          variant: "destructive",
+          title: "Error",
+          description: "Something went wrong. Please try again.",
+        });
+      }
+    } catch (error) {
+      console.error("Error enviando el formulario:", error);
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error("Error enviando el formulario:", error);
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
-         
-         {getFormattedTitle()}
+
+          {getFormattedTitle()}
 
         </h2>
 
@@ -103,7 +100,7 @@ export const ContactSection = () => {
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">
               {" "}
-               {t('contact.contactInformationTitle')}
+              {t('contact.contactInformationTitle')}
             </h3>
 
             <div className="space-y-6 justify-center">
@@ -153,23 +150,22 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> {t('contact.connectwithme')}</h4>
               <div className="flex space-x-4 justify-center">
-                <a 
-                  onClick={playSound}  
+                <a
+                  onClick={playSound}
                   href="https://www.linkedin.com/in/electrocoderEC/" target="_blank">
                   <Linkedin />
                 </a>
-                <a 
+                <a
                   onClick={playSound}
                   href="https://www.facebook.com/Clestqnk/" target="_blank">
                   <Facebook />
                 </a>
-                <a 
+                <a
                   onClick={playSound}
                   href="https://www.instagram.com/sebas.cuenca93/" target="_blank">
                   <Instagram />
                 </a>
-                 
-              
+      
               </div>
             </div>
           </div>

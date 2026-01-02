@@ -11,7 +11,7 @@ export const es = {
   },
 
   cv: 'Descargar CV', // O simplemente 'CV' si prefieres algo corto
-  dowloadPDF:'/Resume Sebastian Cuenca ES.pdf',
+  dowloadPDF:'/pdf/Resume Sebastian Cuenca ES.pdf',
 
   // ESPAÑOL (Spanish)
 about: {
@@ -46,6 +46,9 @@ projects:{
    title: 'Proyectos Destacados',
   buttontxt:'Visita mi Github',
   description: 'Aquí hay algunos de mis proyectos recientes. Cada proyecto fue cuidadosamente elaborado con atención al detalle, rendimiento y experiencia del usuario.',
+  txtproject:'Ver Galería',
+  stateImage: "Imagen {current} de {total}",
+  
 
    project1: {
       title: 'FIREWORKS SMART RF',

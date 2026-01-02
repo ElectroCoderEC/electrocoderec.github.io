@@ -7,6 +7,13 @@ export const LanguageSelector = () => {
   const { language, changeLanguage, languages } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
 
+  
+  const playSoundSelect = () => {
+  const audio = new Audio("/sounds/select.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
   return (
     <div className="relative">
       <button
@@ -35,8 +42,10 @@ export const LanguageSelector = () => {
               <button
                 key={code}
                 onClick={() => {
+                  playSoundSelect();
                   changeLanguage(code);
                   setIsOpen(false);
+
                 }}
                 className={cn(
                   "w-full px-4 py-3 text-left flex items-center justify-between gap-3 transition-colors",

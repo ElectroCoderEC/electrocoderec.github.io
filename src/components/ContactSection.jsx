@@ -20,6 +20,12 @@ export const ContactSection = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
 
+  const playSound = () => {
+  const audio = new Audio("/sounds/letter.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
  // Esta lógica toma la traducción y separa la última palabra
   const getFormattedTitle = () => {
     const fullText = t('contact.title'); // Obtenemos "Ponte en Contacto" o "Kontakt aufnehmen"
@@ -39,6 +45,7 @@ export const ContactSection = () => {
 
   
   const handleSubmit = async (e) => {
+  playSound();
   e.preventDefault();
   setIsSubmitting(true);
 
@@ -107,7 +114,8 @@ export const ContactSection = () => {
                 <div className="text-left">
                   <h4 className="font-medium"><b>  {t('contact.email')} </b></h4>
                   <a
-                    href="mailto:hello@gmail.com"
+                    onClick={playSound}
+                    href="mailto:sebastiancuenca1@gmail.com"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     sebastiancuenca1@gmail.com
@@ -121,7 +129,8 @@ export const ContactSection = () => {
                 <div className="text-left">
                   <h4 className="font-medium"><b>  {t('contact.phone')} </b></h4>
                   <a
-                    href="tel:+11234567890"
+                    onClick={playSound}
+                    href="tel:+4915757962100"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
                     +49 15757962100
@@ -144,13 +153,19 @@ export const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> {t('contact.connectwithme')}</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="https://www.linkedin.com/in/electrocoderEC/" target="_blank">
+                <a 
+                  onClick={playSound}  
+                  href="https://www.linkedin.com/in/electrocoderEC/" target="_blank">
                   <Linkedin />
                 </a>
-                <a href="https://www.facebook.com/Clestqnk/" target="_blank">
+                <a 
+                  onClick={playSound}
+                  href="https://www.facebook.com/Clestqnk/" target="_blank">
                   <Facebook />
                 </a>
-                <a href="https://www.instagram.com/sebas.cuenca93/" target="_blank">
+                <a 
+                  onClick={playSound}
+                  href="https://www.instagram.com/sebas.cuenca93/" target="_blank">
                   <Instagram />
                 </a>
                  

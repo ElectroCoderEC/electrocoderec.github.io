@@ -8,7 +8,7 @@ export const de = {
   },
   
   cv: 'Lebenslauf',
-  dowloadPDF:'/Lebenslauf Sebastian Cuenca.pdf',
+  dowloadPDF:'/pdf/Lebenslauf Sebastian Cuenca.pdf',
 
   // ALEMÁN (German)
 about: {
@@ -37,7 +37,9 @@ projects:{
    title: 'Projekte Highlights',
   buttontxt:'Besuchen Sie mein GitHub-Profil.',
   description: 'Hier sind einige meiner jüngsten Projekte. Jedes Projekt wurde sorgfältig mit Augenmerk auf Details, Leistung und Benutzererfahrung erstellt.',
-
+  txtproject:'Galerie ansehen',
+  stateImage: "Bild {current} von {total}",
+  
    project1: {
       title: 'FIREWORKS SMART RF',
       description: 'Konsole für intelligente Feuerwerksysteme mit mobiler Anwendung.'

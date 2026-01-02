@@ -63,6 +63,13 @@ export const SkillsSection = () => {
 
   const { t } = useTranslation();
 
+  const playSoundSelect = () => {
+  const audio = new Audio("/sounds/select.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
+
   const [activeCategory, setActiveCategory] = useState("tools");
 
   const filteredSkills = skills.filter(
@@ -98,7 +105,7 @@ export const SkillsSection = () => {
           {categories.map((category, key) => (
             <button
               key={key}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {playSoundSelect(); setActiveCategory(category);}}
               className={cn(
                 "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
                 activeCategory === category

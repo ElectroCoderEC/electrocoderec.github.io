@@ -10,7 +10,7 @@ export const en = {
   },
 
   cv: 'Download CV',
-  dowloadPDF:'/Resume Sebastian Cuenca.pdf',
+  dowloadPDF:'/pdf/Resume Sebastian Cuenca.pdf',
 
   about: {
     title: 'About Me',
@@ -44,7 +44,9 @@ export const en = {
     title: 'Featured Projects',
     buttontxt: 'Check my Github',
     description: 'Here are some of my recent projects. Each project was carefully crafted with attention to detail, performance, and user experience.',
-    
+    txtproject:'View Gallery',
+    stateImage: "Image {current} of {total}",
+
     project1: {
       title: 'FIREWORKS SMART RF',
       description: 'Console for smart fireworks systems with mobile application.'
@@ -57,7 +59,6 @@ export const en = {
       title: 'DIGITAL TWIN FOR INDUSTRIAL AUTOMATION',
       description: 'MetaQuest-based digital twin for industrial automation systems.'
     }
-
   },
 
 

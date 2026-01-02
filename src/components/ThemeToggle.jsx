@@ -9,6 +9,19 @@ export const ThemeToggle = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
 
+  const playSoundCV = () => {
+  const audio = new Audio("/sounds/item.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
+
+  const playSoundCursor = () => {
+  const audio = new Audio("/sounds/letter.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
 
   useEffect(() => {
     // Detectar tema preferido del sistema
@@ -21,6 +34,7 @@ export const ThemeToggle = () => {
   }, []);
 
   const toggleTheme = () => {
+    playSoundCursor();
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
@@ -31,6 +45,7 @@ export const ThemeToggle = () => {
   };
 
   const downloadSubmit = (e) => {
+    playSoundCV();
     const targetFile = t('dowloadPDF');
     window.open(targetFile, "_blank", "noopener,noreferrer");
   };

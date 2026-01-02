@@ -5,11 +5,27 @@ export const AboutSection = () => {
   
   const { t } = useTranslation();
 
+  
+  const playSound = () => {
+  const audio = new Audio("/sounds/letter.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
 
-    const downloadSubmit = (e) => {
+  
+  const playSoundCV = () => {
+  const audio = new Audio("/sounds/item.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
+  const downloadSubmit = (e) => {
+    playSoundCV();
     const targetFile = t('dowloadPDF');
     window.open(targetFile, "_blank", "noopener,noreferrer");
   };
+
+
 
   // Esta lógica toma la traducción y separa la última palabra
   const getFormattedTitle = () => {
@@ -50,7 +66,9 @@ export const AboutSection = () => {
          
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
-              <a href="#contact" className="cosmic-button">
+              <a 
+                onClick={playSound}
+              href="#contact" className="cosmic-button">
                 {" "}
                {t('about.btnGet')}
               </a>

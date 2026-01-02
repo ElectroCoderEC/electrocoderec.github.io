@@ -10,6 +10,28 @@ export const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(true);
   const { t } = useTranslation();
 
+
+
+  const playSoundCursor = () => {
+  const audio = new Audio("/sounds/cursor.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
+  
+  const playSoundOpen = () => {
+  const audio = new Audio("/sounds/open.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
+  
+  const playSoundClose = () => {
+  const audio = new Audio("/sounds/close.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
   const navItems = [
     { name: t('nav.home'), href: "#hero" },
     { name: t('nav.about'), href: "#about" },
@@ -28,15 +50,19 @@ export const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     setIsDarkMode(prefersDark);
-    
+
     if (prefersDark) {
       document.documentElement.classList.add("dark");
     }
   }, []);
 
   const toggleTheme = () => {
+
+    playSoundCursor();
+      
     if (isDarkMode) {
       document.documentElement.classList.remove("dark");
       setIsDarkMode(false);
@@ -45,6 +71,19 @@ export const Navbar = () => {
       setIsDarkMode(true);
     }
   };
+
+
+const toggleMenu = () => {
+  
+  if (isMenuOpen) {
+    playSoundClose();
+  }
+  else{
+    playSoundOpen();
+  }
+
+  setIsMenuOpen(prev => !prev);
+};
 
   return (
     <nav
@@ -69,6 +108,7 @@ export const Navbar = () => {
         <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
           {navItems.map((item, key) => (
             <a
+              onClick={playSoundCursor}
               key={key}
               href={item.href}
               className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium"
@@ -100,7 +140,7 @@ export const Navbar = () => {
 
           {/* Mobile Menu Button */}
           <button
-            onClick={() => setIsMenuOpen((prev) => !prev)}
+            onClick={toggleMenu}
             className="md:hidden p-2 text-foreground"
             aria-label={isMenuOpen ? "Close Menu" : "Open Menu"}
           >
@@ -118,6 +158,7 @@ export const Navbar = () => {
           <div className="flex flex-col space-y-8 text-xl text-center">
             {navItems.map((item, key) => (
               <a
+                
                 key={key}
                 href={item.href}
                 className="text-foreground/80 hover:text-primary transition-colors duration-300"

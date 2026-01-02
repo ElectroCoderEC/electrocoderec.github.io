@@ -2,6 +2,13 @@ import { ArrowDown } from "lucide-react";
 import { useTranslation } from "../hooks/useTranslation";
 export const HeroSection = () => {
   const { t } = useTranslation();
+
+  const playSound = () => {
+  const audio = new Audio("/sounds/letter.wav");
+  audio.currentTime = 0;
+  audio.play();
+  };
+
   
   return (
     <section
@@ -27,7 +34,7 @@ export const HeroSection = () => {
           </p>
 
           <div className="pt-4 opacity-0 animate-fade-in-delay-4">
-            <a href="#projects" className="cosmic-button">
+            <a href="#projects" className="cosmic-button" onClick={playSound}>
               {t('hero.cta')}
             </a>
           </div>

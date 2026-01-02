@@ -8,7 +8,7 @@ export const fr = {
   },
 
   cv: 'Télécharger le CV',
-  dowloadPDF: '/Resume Sebastian Cuenca.pdf',
+  dowloadPDF: '/pdf/Resume Sebastian Cuenca.pdf',
 
   // FRANCÉS (French)
 about: {
@@ -37,7 +37,9 @@ projects:{
   title: 'Projets en Vedette',
   buttontxt:'Visitez mon Github',
   description:'Découvrez une sélection de projets qui mettent en valeur mes compétences en ingénierie, développement full-stack et automatisation industrielle. Chaque projet illustre mon engagement envers l\'innovation et la résolution de problèmes complexes.',
-
+  txtproject:'Voir la Galerie',
+  stateImage: "Image {current} de {total}",
+  
   project1: {
       title: 'FIREWORKS SMART RF',
       description: 'Console pour systèmes de feux d\'artifice intelligents avec application mobile.'

@@ -63,7 +63,11 @@ export const fr = {
     project6: {
       title: 'Automatisation Industrielle',
       description: 'Programmation PLC et mise en service de systèmes de contrôle pour diverses industries.'
-    }
+    },
+    project7: {
+      title: 'Application Web avec IA',
+      description: 'Outil web qui facilite le calcul des équipements de génération d\'énergie photovoltaïque et éolienne.'
+    },
     
   },
 

@@ -76,7 +76,11 @@ export const en = {
     project6: {
       title: 'Industrial Automation',
       description: 'PLC programming and commissioning of control systems for various industries.'
-    }
+    },
+    project7: {
+      title: 'Web Application with AI',
+      description: 'Web tool that facilitates the calculation of photovoltaic and wind energy generation equipment.'
+    },
   },
 
 

@@ -22,6 +22,7 @@ const skills = [
   { name: "Tailwind CSS", level: 80, category: "frontend" },
   { name: "Angular", level: 70, category: "frontend" },
   { name: "WINCC", level: 90, category: "frontend" },
+  { name: "flask", level: 90, category: "frontend" },
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
@@ -40,6 +41,7 @@ const skills = [
   { name: "MySQL", level: 85, category: "databases" },
   { name: "Firebase", level: 90, category: "databases" },
   { name: "PostgreSQL", level: 70, category: "databases" },
+  { name: "tensorflow", level: 70, category: "databases" },
 
   // Tools
   { name: "TIA Portal", level: 85, category: "tools" },
@@ -52,6 +54,7 @@ const skills = [
   { name: "Matlab", level: 85, category: "tools" },
   { name: "LabVIEW", level: 85, category: "tools" },
   { name: "Flutter", level: 85, category: "tools" },
+  { name: "opencv", level: 85, category: "tools" },
 
   // PCB Design
 
@@ -188,6 +191,19 @@ export const ProjectsSection = () => {
       demoUrl: "#",
       githubUrl: "#",
     },
+
+    {
+      id: 7,
+      title: t('projects.project7.title'),
+      description: t('projects.project7.description'),
+      image: "/projects/project7.png",
+      gallery: getGallery('project7'),
+      tags: ["Python", "OpenCV", "TensorFlow", "Flask"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+
+
 
   ];
 
@@ -337,10 +353,10 @@ export const ProjectsSection = () => {
             disabled={!canScrollLeft}
             className={`
               cosmic-button
-              absolute -left-6 top-1/2 -translate-y-1/2 z-10
-              rounded-full p-3 transition-all duration-300
-              disabled:opacity-30 disabled:cursor-not-allowed
-              ${canScrollLeft ? "animate-heartbeat" : ""}
+              absolute -left-5 top-1/2 -translate-y-1/2 z-10
+              rounded-full p-3 transition-all duration-300 ease-out
+              
+              ${canScrollLeft ? "opacity-100 scale-100 pointer-events-auto animate-heartbeat " : "opacity-0 scale-75 pointer-events-none"}
             `}
             aria-label="Proyecto anterior"
           >
@@ -431,8 +447,9 @@ export const ProjectsSection = () => {
             disabled={!canScrollRight}
 
             className={`
-              cosmic-button absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 border border-border rounded-full p-3 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed
-              ${canScrollRight ? "animate-heartbeat" : ""}
+              cosmic-button absolute -right-3 top-1/2 -translate-y-1/2 translate-x-4 z-10 border border-border rounded-full p-3 transition-all duration-300 
+              easy-out
+              ${canScrollRight ? "opacity-100 scale-100 pointer-events-auto animate-heartbeat" : "opacity-0 scale-75 pointer-events-none"}
             `}
 
             aria-label="Proyecto siguiente"

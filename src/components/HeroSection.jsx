@@ -29,10 +29,10 @@ export const HeroSection = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
-           <i> {t('hero.description')} </i>
+            <i> {t('hero.description')} </i>
           </p>
 
-          <div className="pt-4 opacity-0 animate-fade-in-delay-4">
+          <div className="pt-4 opacity-0 animate-fade-in-delay-4 opacity-100 scale-100 pointer-events-auto animate-heartbeat">
             <a href="#projects" className="cosmic-button" onClick={playSound}>
               {t('hero.cta')}
             </a>

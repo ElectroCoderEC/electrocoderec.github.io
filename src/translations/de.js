@@ -64,6 +64,10 @@ export const de = {
       title: 'Industrielle Automatisierung',
       description: 'SPS-Programmierung und Inbetriebnahme von Steuerungssystemen für verschiedene Industrien.'
     },
+    project7: {
+      title: 'Web-Anwendung mit KI',
+      description: 'Web-Anwendung, die die Berechnung von Photovoltaik- und Windenergieerzeugungseinrichtungen vereinfacht.'
+    },
     
   },
 

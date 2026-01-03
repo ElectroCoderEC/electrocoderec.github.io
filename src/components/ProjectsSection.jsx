@@ -303,7 +303,7 @@ export const ProjectsSection = () => {
             <ChevronLeft size={24} />
           </button>
 
-          <div className="overflow-x-auto overflow-y-hidden">
+          <div className="overflow-hidden">
             <div
               className="flex transition-transform duration-500 ease-out gap-6 "
               style={{

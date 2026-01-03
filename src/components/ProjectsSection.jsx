@@ -1,5 +1,5 @@
 import { ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useTranslation } from "../hooks/useTranslation";
 import { cn } from "@/lib/utils";
 
@@ -60,16 +60,15 @@ const skills = [
   { name: "Altium Designer", level: 85, category: "pcb" },
   { name: "Proteus", level: 95, category: "pcb" },
   { name: "EasyEDA", level: 90, category: "pcb" },
-  
+
   // 3d Design
   { name: "SolidWorks", level: 80, category: "design" },
   { name: "Fusion 360", level: 80, category: "design" },
   { name: "Blender", level: 70, category: "design" },
   { name: "Factory IO", level: 85, category: "design" },
   { name: "Machines Simulator", level: 75, category: "design" },
-  
-];
 
+];
 
 export const ProjectsSection = () => {
   const { t } = useTranslation();
@@ -91,9 +90,12 @@ export const ProjectsSection = () => {
       .map((path) => allImages[path].default || allImages[path]);
   };
 
+  const sliderRef = useRef(null); // Referencia al contenedor con scroll
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
   // Estado para el carrusel principal de proyectos
   const [currentIndex, setCurrentIndex] = useState(0);
-
   // Estado para el Modal
   const [selectedProject, setSelectedProject] = useState(null);
   const [modalImageIndex, setModalImageIndex] = useState(0);
@@ -103,27 +105,21 @@ export const ProjectsSection = () => {
     audio.currentTime = 0;
     audio.play();
   };
-
   const playSoundClose = () => {
     const audio = new Audio("/sounds/close.wav");
     audio.currentTime = 0;
     audio.play();
   };
-
-
   const playSoundItem = () => {
     const audio = new Audio("/sounds/select.wav");
     audio.currentTime = 0;
     audio.play();
   };
-
   const playSoundCV = () => {
     const audio = new Audio("/sounds/item.wav");
     audio.currentTime = 0;
     audio.play();
   };
-
-
   const projects = [
     {
       id: 1,
@@ -192,8 +188,29 @@ export const ProjectsSection = () => {
       demoUrl: "#",
       githubUrl: "#",
     },
-    
+
   ];
+
+
+  const checkScrollPosition = () => {
+    const container = sliderRef.current;
+    if (!container) return;
+
+    const { scrollLeft, scrollWidth, clientWidth } = container;
+
+    // 1. Detectar si podemos ir a la izquierda o derecha para los botones
+    // Usamos un margen de error de 1px por temas de redondeo en pantallas retina
+    setCanScrollLeft(scrollLeft > 0);
+    setCanScrollRight(scrollLeft + clientWidth < scrollWidth - 1);
+
+    // 2. Calcular el índice actual para los puntos (Dots)
+    // Calculamos el ancho total de una tarjeta incluyendo el gap (asumiendo gap-6 = 24px)
+    // Nota: Si el ancho es variable, esto es una aproximación, pero suele funcionar bien.
+    const cardWidth = clientWidth / itemsPerView;
+    const newIndex = Math.round(scrollLeft / cardWidth);
+
+    setCurrentIndex(newIndex);
+  };
 
   // --- LÓGICA DEL CARRUSEL PRINCIPAL ---
   const getItemsPerView = () => {
@@ -205,12 +222,39 @@ export const ProjectsSection = () => {
 
   const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
   const totalPages = Math.ceil(projects.length / itemsPerView);
-  const maxIndex = totalPages - 1;
+  const maxIndex = Math.max(0, projects.length - itemsPerView);
+
+
+  // useEffect para verificar la posición inicial al cargar o cambiar tamaño
+  useEffect(() => {
+    checkScrollPosition();
+    window.addEventListener('resize', checkScrollPosition);
+    return () => window.removeEventListener('resize', checkScrollPosition);
+  }, [itemsPerView]);
+
+
+  const scrollContainer = (direction) => {
+    playSoundItem();
+    const container = sliderRef.current;
+    if (!container) return;
+
+    // Calculamos cuánto mover: Ancho del contenedor / items visibles = Ancho de 1 tarjeta
+    const scrollAmount = container.clientWidth / itemsPerView;
+
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+
+    // Nota: No hace falta setear el Index aquí manualmente, 
+    // el evento 'onScroll' del div lo hará por nosotros.
+  };
 
   useEffect(() => {
     const handleResize = () => {
       setItemsPerView(getItemsPerView());
-      setCurrentIndex(0);
+      // Ajustamos el índice si al redimensionar nos pasamos del límite
+      setCurrentIndex(prev => Math.min(prev, Math.max(0, projects.length - getItemsPerView())));
     };
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
@@ -289,31 +333,36 @@ export const ProjectsSection = () => {
         {/* Carrusel Container */}
         <div className="relative">
           <button
-            onClick={prevSlide}
-            disabled={currentIndex === 0}
+            onClick={() => scrollContainer('left')}
+            disabled={!canScrollLeft}
             className={`
               cosmic-button
               absolute -left-6 top-1/2 -translate-y-1/2 z-10
               rounded-full p-3 transition-all duration-300
               disabled:opacity-30 disabled:cursor-not-allowed
-              ${currentIndex !== 0 ? "animate-heartbeat" : ""}
+              ${canScrollLeft ? "animate-heartbeat" : ""}
             `}
             aria-label="Proyecto anterior"
           >
             <ChevronLeft size={24} />
           </button>
 
-          <div className="overflow-x-auto overflow-y-hidden">
+          <div
+            ref={sliderRef} // <--- Conectamos la referencia
+            onScroll={checkScrollPosition} // <--- Escuchamos el movimiento
+            className="overflow-x-auto overflow-y-hidden scroll-smooth snap-x snap-mandatory" // pb-4 para dar espacio si hay scrollbar visible
+            style={{ scrollbarWidth: 'none' }}
+          >
             <div
               className="flex transition-transform duration-500 ease-out gap-6 "
               style={{
-                transform: `translateX(-${currentIndex * 100}%)`,
+
               }}
             >
               {projects.map((project, key) => (
                 <div
                   key={key}
-                  className="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.4%-1.334rem)]"
+                  className="flex-shrink-0 w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1rem)]"
                 >
                   <div className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover h-full flex flex-col">
                     {/* Imagen Principal - Al hacer click abre el modal */}
@@ -378,12 +427,12 @@ export const ProjectsSection = () => {
           </div>
 
           <button
-            onClick={nextSlide}
-            disabled={currentIndex >= maxIndex}
-            
+            onClick={() => scrollContainer('right')}
+            disabled={!canScrollRight}
+
             className={`
               cosmic-button absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 border border-border rounded-full p-3 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed
-              ${currentIndex !== maxIndex ? "animate-heartbeat" : ""}
+              ${canScrollRight ? "animate-heartbeat" : ""}
             `}
 
             aria-label="Proyecto siguiente"
@@ -394,11 +443,23 @@ export const ProjectsSection = () => {
 
         {/* Indicadores */}
         <div className="flex justify-center gap-2 mt-8">
-          {Array.from({ length: totalPages }).map((_, index) => (
+          {Array.from({ length: Math.max(1, projects.length - itemsPerView + 1) }).map((_, index) => (
+            // Opcional: Si el número de items es menor que los visibles, no mostramos puntos
+
             <button
 
               key={index}
-              onClick={() => { playSoundItem(); setCurrentIndex(index); }}
+              onClick={() => {
+                playSoundItem();
+                // Al hacer click en un punto, forzamos el scroll a esa posición
+                if (sliderRef.current) {
+                  const cardWidth = sliderRef.current.clientWidth / itemsPerView;
+                  sliderRef.current.scrollTo({
+                    left: index * cardWidth, // + (index * 24) si el cálculo del gap es estricto
+                    behavior: 'smooth'
+                  });
+                }
+              }}
               className={`border-3 h-3 rounded-full transition-all duration-300 ${currentIndex === index
                 ? "w-8 bg-primary"
                 : "w-2 bg-muted-foreground/30 hover:bg-muted-foreground/50"

@@ -49,18 +49,21 @@ export const de = {
       description: 'Design von RF-PCBs für Hochfrequenzanwendungen.'
     },
     project3: {
-      title: 'Digitaler Zwilling für industrielle Automatisierung',
+      title: 'Digitaler Zwilling mit virtueller Realität',
       description: 'MetaQuest-basiertes digitales Zwilling für industrielle Automatisierungssysteme.'
     },
     project4: {
       title: 'HMI für Wasserturbinen',
       description: 'Datenakquisitions-System für prädiktive Wartungsprozesse.'
     },
-
     project5: {
       title: 'Entwicklung von mobilen Anwendungen',
-      description: 'Design und Entwicklung von plattformübergreifenden mobilen Anwendungen für verschiedene Industrien'
-    }
+      description: 'Design und Entwicklung von plattformübergreifenden mobilen Anwendungen für verschiedene Sektoren.'
+    },
+    project6: {
+      title: 'Industrielle Automatisierung',
+      description: 'SPS-Programmierung und Inbetriebnahme von Steuerungssystemen für verschiedene Industrien.'
+    },
     
   },
 

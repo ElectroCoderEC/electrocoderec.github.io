@@ -342,8 +342,6 @@
 
 .meteor-effect {
   position: absolute;
-  top: 50%;
-  left: 50%;
   height: 2px;
   /* Degradado más suave para la cola */
   background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 40%, transparent 100%);
@@ -370,6 +368,30 @@
   box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
   z-index: 10;
 }
+
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.15);
+  }
+  40% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-heartbeat {
+  animation: heartbeat 1.5s infinite;
+}
+
 
 /* marquee end */
 

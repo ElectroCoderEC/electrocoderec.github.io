@@ -61,7 +61,7 @@ export const es = {
       description: 'Diseño de PCBs RF para aplicaciones de alta frecuencia.'
     },
     project3: {
-      title: 'GEMELO DIGITAL PARA AUTOMATIZACIÓN INDUSTRIAL',
+      title: 'Gemelo Digital con Realidad Virtual',
       description: 'Gemelo digital usando MetaQuest para sistemas de automatización industrial.'
     },
 
@@ -72,7 +72,11 @@ export const es = {
 
     project5: {
       title: 'Desarrollo de aplicaciones móviles',
-      description: 'Diseño y desarrollo de aplicaciones móviles multiplataforma para diferentes industrias'
+      description: 'Diseño y desarrollo de aplicaciones móviles multiplataforma para diferentes sectores.'
+    },
+    project6: {
+      title: 'Automatización Industrial',
+      description: 'Programación de PLC y puesta en marcha de sistemas de control para diferentes industrias.'
     }
 
 

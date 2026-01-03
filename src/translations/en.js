@@ -61,7 +61,7 @@ export const en = {
       description: 'Design of RF PCBs for high-frequency applications.'
     },
     project3: {
-      title: 'DIGITAL TWIN FOR INDUSTRIAL AUTOMATION',
+      title: 'Virtual Reality Digital Twin',
       description: 'MetaQuest-based digital twin for industrial automation systems.'
     },
     project4: {
@@ -71,7 +71,11 @@ export const en = {
 
     project5: {
       title: 'Mobile Application Development',
-      description: 'Design and development of cross-platform mobile applications for different industries'
+      description: 'Design and development of cross-platform mobile applications for various sectors.'
+    },
+    project6: {
+      title: 'Industrial Automation',
+      description: 'PLC programming and commissioning of control systems for various industries.'
     }
   },
 

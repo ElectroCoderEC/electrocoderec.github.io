@@ -47,17 +47,17 @@ export const StarBackground = () => {
   };
 
   const generateMeteors = () => {
-    const numberOfMeteors = 5; // Unos cuantos más para asegurar variedad
+    const numberOfMeteors = 6; // Unos cuantos más para asegurar variedad
     const newMeteors = [];
 
     for (let i = 0; i < numberOfMeteors; i++) {
       // Decidimos si este meteoro será rápido (turbo) o lento
-      const isFast = Math.random() > 0.6;
+      const isFast = Math.random() > 0.7;
 
       newMeteors.push({
         id: i,
-        x: Math.random() * 100,
-        y: Math.random() * 40,
+        x: Math.random() * 100 - 30,
+        y: Math.random() * 20,
         // Si es rápido, delay corto. Si es lento, delay largo.
         delay: Math.random() * 15, 
         

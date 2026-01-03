@@ -21,6 +21,7 @@ const skills = [
   { name: "TypeScript", level: 65, category: "frontend" },
   { name: "Tailwind CSS", level: 80, category: "frontend" },
   { name: "Angular", level: 70, category: "frontend" },
+  { name: "WINCC", level: 90, category: "frontend" },
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
@@ -30,6 +31,7 @@ const skills = [
   { name: "Python", level: 95, category: "backend" },
   { name: "PHP", level: 80, category: "backend" },
   { name: "siemens", level: 80, category: "backend" },
+  { name: "Android Studio", level: 80, category: "backend" },
 
   // Databases
 
@@ -49,6 +51,7 @@ const skills = [
   { name: "EPLAN P8", level: 80, category: "tools" },
   { name: "Matlab", level: 85, category: "tools" },
   { name: "LabVIEW", level: 85, category: "tools" },
+  { name: "Flutter", level: 85, category: "tools" },
 
   // PCB Design
 
@@ -57,14 +60,14 @@ const skills = [
   { name: "Altium Designer", level: 85, category: "pcb" },
   { name: "Proteus", level: 95, category: "pcb" },
   { name: "EasyEDA", level: 90, category: "pcb" },
-
+  
   // 3d Design
   { name: "SolidWorks", level: 80, category: "design" },
   { name: "Fusion 360", level: 80, category: "design" },
   { name: "Blender", level: 70, category: "design" },
   { name: "Factory IO", level: 85, category: "design" },
   { name: "Machines Simulator", level: 75, category: "design" },
-
+  
 ];
 
 
@@ -134,12 +137,12 @@ export const ProjectsSection = () => {
     },
 
     {
-      id: 4,
-      title: t('projects.project4.title'),
-      description: t('projects.project4.description'),
-      image: "/projects/project4.png",
-      gallery: getGallery('project4'),
-      tags: ["Labview", "NI DAQ 6009", "ABB", "Siemens"],
+      id: 6,
+      title: t('projects.project6.title'),
+      description: t('projects.project6.description'),
+      image: "/projects/project6.png",
+      gallery: getGallery('project6'),
+      tags: ["SIEMENS", "TIA PORTAL", "WINCC", "LOGO!"],
       demoUrl: "#",
       githubUrl: "#",
     },
@@ -179,7 +182,16 @@ export const ProjectsSection = () => {
       githubUrl: "#",
     },
     // ... repite la estructura para los demás items
-    
+    {
+      id: 4,
+      title: t('projects.project4.title'),
+      description: t('projects.project4.description'),
+      image: "/projects/project4.png",
+      gallery: getGallery('project4'),
+      tags: ["Labview", "NI DAQ 6009", "ABB", "Siemens"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
     
   ];
 
@@ -279,13 +291,19 @@ export const ProjectsSection = () => {
           <button
             onClick={prevSlide}
             disabled={currentIndex === 0}
-            className="cosmic-button absolute -left-6 top-1/2 -translate-y-1/2 -translate-x z-10 rounded-full p-3 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            className={`
+              cosmic-button
+              absolute -left-6 top-1/2 -translate-y-1/2 z-10
+              rounded-full p-3 transition-all duration-300
+              disabled:opacity-30 disabled:cursor-not-allowed
+              ${currentIndex !== 0 ? "animate-heartbeat" : ""}
+            `}
             aria-label="Proyecto anterior"
           >
             <ChevronLeft size={24} />
           </button>
 
-          <div className="overflow-hidden">
+          <div className="overflow-x-auto overflow-y-hidden">
             <div
               className="flex transition-transform duration-500 ease-out gap-6 "
               style={{
@@ -362,7 +380,12 @@ export const ProjectsSection = () => {
           <button
             onClick={nextSlide}
             disabled={currentIndex >= maxIndex}
-            className="cosmic-button absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 border border-border rounded-full p-3 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+            
+            className={`
+              cosmic-button absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 border border-border rounded-full p-3 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed
+              ${currentIndex !== maxIndex ? "animate-heartbeat" : ""}
+            `}
+
             aria-label="Proyecto siguiente"
           >
             <ChevronRight size={24} />

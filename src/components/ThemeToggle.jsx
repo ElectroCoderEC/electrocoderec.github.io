@@ -72,7 +72,7 @@ export const ThemeToggle = () => {
       <button
         onClick={toggleTheme}
         className={cn(
-          "max-md:hidden p-2 rounded-full transition-colors duration-300",
+          "max-md:hidden p-2 rounded-full transition-colors duration-800",
           "hover:bg-primary/10 focus:outline-none border-3"
         )}
         aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}

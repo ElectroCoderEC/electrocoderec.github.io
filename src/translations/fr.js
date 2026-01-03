@@ -49,7 +49,7 @@ export const fr = {
       description: 'Design de PCB RF pour des applications à haute fréquence.'
     },
     project3: {
-      title: 'Jumeau Numérique pour l\'Automatisation Industrielle',
+      title: 'Jumeau numérique avec réalité virtuelle',
       description: 'MetaQuest-based digital twin pour les systèmes d\'automatisation industrielle.'
     },
     project4: {
@@ -58,8 +58,13 @@ export const fr = {
     },
     project5: {
       title: 'Développement d\'Applications Mobiles',
-      description: 'Conception et développement d\'applications mobiles multiplateformes pour différents secteurs.'
+      description: 'Conception et développement d\'applications mobiles multiplateformes pour divers secteurs.'
+    },
+    project6: {
+      title: 'Automatisation Industrielle',
+      description: 'Programmation PLC et mise en service de systèmes de contrôle pour diverses industries.'
     }
+    
   },
 
   skills: {

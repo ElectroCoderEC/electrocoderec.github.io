@@ -83,6 +83,15 @@ export const es = {
       description: 'Herramienta web que facilita el cálculo de equipos de generación de energía fotovoltaica y eólica.'
     },
 
+    project8: {
+      title: 'Sistema de riego inteligente IoT',
+      description: 'Proyecto embebido para monitoreo y control de riego remoto en agricultura de precisión.'
+    },
+    project9:{
+      title: 'Diseño Electrónico',
+      description: 'Diseño de circuitos electrónicos y PCB para diferentes proyectos embebidos.'
+    },
+
 
   },
 

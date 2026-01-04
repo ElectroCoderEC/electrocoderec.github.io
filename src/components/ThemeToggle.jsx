@@ -5,8 +5,6 @@ import { LanguageSelector } from "./LanguageSelector";
 import { useTranslation } from "../hooks/useTranslation";
 
 export const ThemeToggle = () => {
-  const [isDarkMode, setIsDarkMode] = useState(true);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { t } = useTranslation();
 
   const playSoundCV = () => {
@@ -21,6 +19,23 @@ export const ThemeToggle = () => {
     audio.play();
   };
 
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    if (typeof window === "undefined") return true; // SSR safe
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) return savedTheme === "dark";
+    return true; // default: dark
+  });
+
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
+
   useEffect(() => {
     // Detectar tema preferido del sistema
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -33,13 +48,7 @@ export const ThemeToggle = () => {
 
   const toggleTheme = () => {
     playSoundCursor();
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      setIsDarkMode(true);
-    }
+    setIsDarkMode(prev => !prev);
   };
 
   const downloadSubmit = (e) => {

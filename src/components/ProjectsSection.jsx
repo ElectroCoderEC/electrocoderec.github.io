@@ -26,7 +26,7 @@ const skills = [
 
   // Backend
   { name: "Node.js", level: 80, category: "backend" },
-  { name: "C/C++", level: 95, category: "backend" },
+  { name: "C++", level: 95, category: "backend" },
   { name: "Java", level: 80, category: "backend" },
   { name: "C#", level: 75, category: "backend" },
   { name: "Python", level: 95, category: "backend" },
@@ -55,6 +55,7 @@ const skills = [
   { name: "LabVIEW", level: 85, category: "tools" },
   { name: "Flutter", level: 85, category: "tools" },
   { name: "opencv", level: 85, category: "tools" },
+  { name: "iot", level: 85, category: "tools" },
 
   // PCB Design
 
@@ -159,16 +160,17 @@ export const ProjectsSection = () => {
     },
 
     {
-      id: 2,
-      title: t('projects.project2.title'),
-      description: t('projects.project2.description'),
-      image: "/projects/project2.png",
-      gallery: getGallery('project2'),
-      tags: ["Altium Designer", "JLCPCB", "RF"],
+      id: 9,
+      title: t('projects.project9.title'),
+      description: t('projects.project9.description'),
+      image: "/projects/project9.png",
+      gallery: getGallery('project9'),
+      tags: ["Altium Designer", "EASYEDA", "EAGLE", "KICAD"],
       demoUrl: "#",
       githubUrl: "#",
     },
 
+    
     {
       id: 3,
       title: t('projects.project1.title'),
@@ -203,10 +205,30 @@ export const ProjectsSection = () => {
       githubUrl: "#",
     },
 
+    {
+      id: 8,
+      title: t('projects.project8.title'),
+      description: t('projects.project8.description'),
+      image: "/projects/project8.png",
+      gallery: getGallery('project8'),
+      tags: ["C++", "Python", "Firebase", "RF", "IoT"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+
+    {
+      id: 2,
+      title: t('projects.project2.title'),
+      description: t('projects.project2.description'),
+      image: "/projects/project2.png",
+      gallery: getGallery('project2'),
+      tags: ["Altium Designer", "JLCPCB", "RF"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
 
 
   ];
-
 
   const checkScrollPosition = () => {
     const container = sliderRef.current;
@@ -239,7 +261,6 @@ export const ProjectsSection = () => {
   const [itemsPerView, setItemsPerView] = useState(getItemsPerView());
   const totalPages = Math.ceil(projects.length / itemsPerView);
   const maxIndex = Math.max(0, projects.length - itemsPerView);
-
 
   // useEffect para verificar la posición inicial al cargar o cambiar tamaño
   useEffect(() => {

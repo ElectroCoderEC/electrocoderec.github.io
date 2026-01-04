@@ -68,6 +68,15 @@ export const fr = {
       title: 'Application Web avec IA',
       description: 'Outil web qui facilite le calcul des équipements de génération d\'énergie photovoltaïque et éolienne.'
     },
+    project8: {
+      title: 'Système d\'Irrigation Intelligent IoT',
+      description: 'Projet embarqué pour la surveillance et le contrôle à distance de l\'irrigation en agriculture de précision.'
+    },
+    project9: {
+      title: 'Conception Électronique',
+      description: 'Conception de circuits électroniques et de cartes PCB pour différents projets embarqués'
+    },
+    
     
   },
 

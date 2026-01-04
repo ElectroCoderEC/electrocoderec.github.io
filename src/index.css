@@ -344,13 +344,20 @@
   position: absolute;
   height: 2px;
   /* Degradado más suave para la cola */
-  background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 40%, transparent 100%);
+  /*background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.4) 40%, transparent 100%);*/
+  background: linear-gradient(
+    90deg,
+    var(--meteor-color) 0%,
+    rgba(255,255,255,0.4) 40%,
+    transparent 100%
+  );
   transform: rotate(215deg);
   opacity: 0;
   animation: meteor-travel linear infinite;
   border-radius: 9999px;
   /* Resplandor alrededor de todo el cuerpo del meteoro */
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); 
+  /*box-shadow: 0 0 10px rgba(255, 255, 255, 0.4); */
+  box-shadow: 0 0 12px color-mix(in srgb, var(--meteor-color), transparent 60%);
 }
 
 /* Cabeza del meteoro (Bola de fuego) */
@@ -362,10 +369,12 @@
   width: 6px; /* Cabeza más grande */
   height: 6px;
   border-radius: 50%;
-  background: #fff;
+  /*background: #fff;*/
   left: 0;
   /* Brillo muy fuerte en la punta */
-  box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);
+  /*box-shadow: 0 0 20px 5px rgba(255, 255, 255, 0.8);*/
+  background: var(--meteor-color);
+  box-shadow: 0 0 20px 6px color-mix(in srgb, var(--meteor-color), white 30%);
   z-index: 10;
 }
 

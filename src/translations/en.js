@@ -81,6 +81,18 @@ export const en = {
       title: 'Web Application with AI',
       description: 'Web tool that facilitates the calculation of photovoltaic and wind energy generation equipment.'
     },
+    project8: {
+      title: 'IoT Smart Irrigation System',
+      description: 'Embedded project for remote irrigation monitoring and control in precision agriculture.'
+    },
+    project9:{
+      title: 'Electronic Design',
+      description: 'Electronic circuit and PCB design for various embedded projects.'
+    },
+
+    
+
+    
   },
 
 

@@ -68,6 +68,14 @@ export const de = {
       title: 'Web-Anwendung mit KI',
       description: 'Web-Anwendung, die die Berechnung von Photovoltaik- und Windenergieerzeugungseinrichtungen vereinfacht.'
     },
+    project8: {
+      title: 'IoT Smart Bewässerungssystem',
+      description: 'Eingebettetes Projekt für die Fernüberwachung und -steuerung der Bewässerung in der Präzisionslandwirtschaft.'
+    },
+    project9: {
+      title: 'Elektronisches Design',
+      description: 'Entwurf elektronischer Schaltungen und Leiterplatten für verschiedene Embedded-Projekte'
+    },
     
   },
 

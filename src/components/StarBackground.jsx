@@ -84,6 +84,10 @@ export const StarBackground = () => {
     setStars(newStars);
   };
 
+   const generateUniqueId = () => {
+    // Solución compatible con móviles (sin crypto.randomUUID)
+    return `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  };
 
   const regenerateMeteor = (id) => {
   setMeteors((prev) =>
@@ -96,7 +100,7 @@ export const StarBackground = () => {
 
       return {
         ...m,
-        id: crypto.randomUUID(), // fuerza nueva animación
+        id:generateUniqueId(), // fuerza nueva animación
         x: Math.random() * 100 - 30,
         y: Math.random() * 20,
         delay: Math.random() * 3,
@@ -155,7 +159,7 @@ export const StarBackground = () => {
   if (!isDarkMode) return null;
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden dark:block">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
 
       {/* Estrellas */}
       {stars.map((star) => (

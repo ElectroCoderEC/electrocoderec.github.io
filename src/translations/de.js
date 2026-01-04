@@ -76,6 +76,11 @@ export const de = {
       title: 'Elektronisches Design',
       description: 'Entwurf elektronischer Schaltungen und Leiterplatten für verschiedene Embedded-Projekte'
     },
+    project10:{
+      title: 'Elektrostimulation mit ROS2',
+      description: 'IoT-sensorisches Gerät zur Muskelstimulation.'
+    },
+
     
   },
 

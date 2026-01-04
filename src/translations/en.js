@@ -89,6 +89,11 @@ export const en = {
       title: 'Electronic Design',
       description: 'Electronic circuit and PCB design for various embedded projects.'
     },
+    project10:{
+      title: 'Electrostimulation with ROS2',
+      description: 'IoT sensory muscle stimulation device.'
+    },
+
 
     
 

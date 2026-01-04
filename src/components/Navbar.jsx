@@ -88,7 +88,7 @@ export const Navbar = () => {
   return (
     <nav
       className={cn(
-        "fixed w-full z-40 transition-all duration-300",
+        "fixed w-full z-40 transition-all duration-300 ",
         isScrolled ? "py-3   shadow-sm bg-card" : "py-5"
       )}
     >
@@ -105,7 +105,7 @@ export const Navbar = () => {
         </a>
 
         {/* DESKTOP NAV (Centrado Absoluto) */}
-        <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 space-x-8">
+        <div className="hidden lg:flex absolute left-1/2 -translate-x-1/2 space-x-8">
           {navItems.map((item, key) => (
             <a
               onClick={playSoundCursor}
@@ -128,7 +128,7 @@ export const Navbar = () => {
           {/* Theme Toggle - Solo mobile */}
           <button
             onClick={toggleTheme}
-            className="md:hidden p-2 rounded-full transition-colors duration-300 hover:bg-primary/10"
+            className="md:hidden p-2 rounded-full transition-colors duration-300 hover:bg-primary/10 focus:outline-none border-3"
             aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
           >
             {isDarkMode ? (

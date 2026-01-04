@@ -7,6 +7,8 @@ import { useTranslation } from "../hooks/useTranslation";
 export const ThemeToggle = () => {
   const { t } = useTranslation();
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const playSoundCV = () => {
     const audio = new Audio("/sounds/item.wav");
     audio.currentTime = 0;
@@ -18,6 +20,16 @@ export const ThemeToggle = () => {
     audio.currentTime = 0;
     audio.play();
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
 
   const [isDarkMode, setIsDarkMode] = useState(() => {
     if (typeof window === "undefined") return true; // SSR safe
@@ -58,7 +70,13 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className="fixed top-1 right-5 z-50 flex items-center gap-2 max-md:top-3 max-md:right-3"
+    <div
+      className={cn(
+        "fixed right-5 z-50 flex items-center gap-2 max-md:top-3 max-md:right-3 transition-all duration-300",
+        isScrolled ? "top-1" : "top-3"
+      )}
+
+
     >
       {/* Language Selector - ocultar en mobile */}
       <button
@@ -82,7 +100,7 @@ export const ThemeToggle = () => {
         onClick={toggleTheme}
         className={cn(
           "max-md:hidden p-2 rounded-full transition-colors duration-800",
-          "hover:bg-primary/10 focus:outline-none border-3"
+          "hover:bg-primary/10 focus:outline-none border-3 "
         )}
         aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       >

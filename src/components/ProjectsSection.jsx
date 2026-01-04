@@ -56,6 +56,7 @@ const skills = [
   { name: "Flutter", level: 85, category: "tools" },
   { name: "opencv", level: 85, category: "tools" },
   { name: "iot", level: 85, category: "tools" },
+  { name: "ros2", level: 85, category: "tools" },
 
   // PCB Design
 
@@ -223,6 +224,17 @@ export const ProjectsSection = () => {
       image: "/projects/project2.png",
       gallery: getGallery('project2'),
       tags: ["Altium Designer", "JLCPCB", "RF"],
+      demoUrl: "#",
+      githubUrl: "#",
+    },
+
+    {
+      id: 10,
+      title: t('projects.project10.title'),
+      description: t('projects.project10.description'),
+      image: "/projects/project10.png",
+      gallery: getGallery('project10'),
+      tags: ["ROS2", "Solidworks", "Altium Designer"],
       demoUrl: "#",
       githubUrl: "#",
     },

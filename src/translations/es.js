@@ -91,6 +91,10 @@ export const es = {
       title: 'Diseño Electrónico',
       description: 'Diseño de circuitos electrónicos y PCB para diferentes proyectos embebidos.'
     },
+    project10:{
+      title: 'Electroestimulación con ROS2',
+      description: 'Dispositivo sensorial de estimulación muscular IoT.'
+    },
 
 
   },

@@ -76,6 +76,11 @@ export const fr = {
       title: 'Conception Électronique',
       description: 'Conception de circuits électroniques et de cartes PCB pour différents projets embarqués'
     },
+    project10:{
+      title: 'Électrostimulation avec ROS2',
+      description: 'Dispositif sensoriel IoT de stimulation musculaire.'
+    },
+
     
     
   },

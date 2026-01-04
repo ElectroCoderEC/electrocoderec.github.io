@@ -62,7 +62,7 @@ export const StarBackground = () => {
         opacity: Math.random() * 0.5 + 0.4,
         animationDuration: isTwinkle ? Math.random() * 2 + 2 : Math.random() * 4 + 3,
         // Delay corto para que no tarden en aparecer al cargar
-        animationDelay: Math.random() * 3,
+        animationDelay: Math.random() * 1,
         twinkle: isTwinkle,
       });
     }
@@ -84,7 +84,7 @@ export const StarBackground = () => {
       // En móvil (pantalla estrecha), empezamos desde un X más centrado (0 a 80)
       // En desktop, mantenemos el margen negativo (-30 a 70) para recorridos largos
       const xPos = isMobile 
-        ? Math.random() * 80 
+        ? Math.random() * 30 
         : Math.random() * 100 - 30;
 
       newMeteors.push({

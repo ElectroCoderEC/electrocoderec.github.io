@@ -110,7 +110,7 @@ export const StarBackground = () => {
   if (!isDarkMode) return null;
 
   return (
-    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden dark:block">
+    <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
       {/* Renderizado de Estrellas */}
       {stars.map((star) => (
         <div
